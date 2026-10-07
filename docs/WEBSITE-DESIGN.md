@@ -2,7 +2,11 @@
 
 The editable [Nativol website design in Figma](https://www.figma.com/design/oydHqrV9SQip4TNi58u2GL?node-id=3-2) includes desktop and mobile compositions, color variables, typography styles, reusable button states, and editorial row components. File access follows the owner's Figma permissions.
 
-The implementation is plain HTML, CSS, and local JavaScript in `site/`. It uses Manrope for text and IBM Plex Mono for technical labels. Fonts are hosted locally; copyright and SIL Open Font License notices are in `site/assets/fonts/`. The drive artwork in `site/assets/ntfs-drive.svg` is an editable vector illustration, not a screenshot of the app.
+The implementation is plain HTML, CSS, and local JavaScript in `site/`. It uses Manrope for text and IBM Plex Mono for technical labels. Fonts are hosted locally as full-character WOFF2 files, reducing their combined transfer size by 69.5% relative to the original TTF files. Source fonts, copyright and SIL Open Font License notices remain in `site/assets/fonts/`.
+
+The direction is a calm, precise Mac utility: a product-led hero, a menu-bar illustration, readable release details, and a selectable Connect → Use Finder → Eject preview. The preview uses a native radio group and CSS, with arrow-key navigation, visible focus and no autoplay. Its sample drive and files are explicitly illustrative; the preview performs no disk operations. The drive artwork in `site/assets/ntfs-drive.svg` remains editable vector artwork.
+
+`styles.css` contains the shared foundation, `refinements.css` the current layout and typography refinement, and `tour.css` the isolated product preview. Keep the font preload aligned with the stylesheet's WOFF2 URL.
 
 ## Updating the site
 

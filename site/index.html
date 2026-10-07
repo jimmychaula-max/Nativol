@@ -4,18 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Read and write eligible NTFS drives in Finder with Nativol. Free, open-source software for Intel Macs. Explore the testing beta and installation guide.">
-  <meta name="theme-color" content="#f5f4ef">
-  <meta property="og:title" content="Nativol — Read. Write. Back to work.">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta property="og:title" content="Nativol — NTFS, meet Mac.">
   <meta property="og:description" content="Copy files to your NTFS drives in Finder. A free, open-source utility for Intel Macs.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Nativol">
   <meta property="og:url" content="https://nativol.org/">
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://nativol.org/">
-  <title>Nativol — Read. Write. Back to work.</title>
+  <title>Nativol — NTFS, meet Mac.</title>
   <link rel="icon" href="assets/nativol.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/Manrope%5Bwght%5D.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20261007-editorial-3">
+  <link rel="preload" href="assets/fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261007-refined-1">
+  <link rel="stylesheet" href="refinements.css?v=20261007-1">
+  <link rel="stylesheet" href="tour.css?v=20261007-1">
   <script src="config.js?v=20261007-coffee" defer></script>
   <script src="site.js?v=20261007-wallets" defer></script>
 </head>
@@ -25,6 +27,10 @@
     <symbol id="i-diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V4h7l2 3h9v13H3Z"/></symbol>
+    <symbol id="i-eject" viewBox="0 0 24 24"><path d="m5 14 7-9 7 9ZM5 19h14"/></symbol>
+    <symbol id="i-menubar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18m-6-2h3"/></symbol>
+    <symbol id="i-local" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9S4 17 4 12V6Z"/><path d="m8 12 3 3 5-5"/></symbol>
   </defs></svg>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
@@ -38,36 +44,76 @@
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">NTFS FOR MAC <span aria-hidden="true">/</span> INTEL BETA</p>
-        <h1 id="hero-title">Read.<br>Write.<br>Back to work.</h1>
-        <p class="hero-description">Copy files to your NTFS drives in Finder. Nativol handles the mount. You get on with your work.</p>
+        <h1 id="hero-title">NTFS,<br><span>meet Mac.</span></h1>
+        <p class="hero-description">Read and write your NTFS drives in Finder. One setup, then Nativol handles eligible mounts from your menu bar.</p>
         <div class="actions hero-actions">
           <a id="hero-download-link" class="button" href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg">Download Intel beta <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
           <a class="text-link" href="guide.html#installation">Installation guide <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <p class="hero-note"><span>0.5.0-beta.1 · 3.9 MB · Free &amp; open source</span><span>Intel · macOS 15.7.9 · macFUSE 5.4.0</span></p>
+        <div class="hero-note"><p><strong>Free &amp; open source</strong><span>0.5.0-beta.1 · 3.9 MB</span></p><p>For Intel macOS 15.7.9 with macFUSE 5.4.0.</p></div>
       </div>
       <figure class="drive-figure">
         <div class="drive-stage">
-          <div class="drive-stage-label"><span>01 / EXTERNAL NTFS</span><span class="crosshair" aria-hidden="true">+</span></div>
+          <div class="drive-stage-label"><span>A FAMILIAR CONNECTION</span><span class="scene-menu-icon" aria-hidden="true"><img src="assets/nativol.svg" width="20" height="20" alt=""></span></div>
           <img class="drive-art" src="assets/ntfs-drive.svg" width="600" height="580" alt="Technical illustration of an external NTFS drive">
-          <div class="drive-status"><span class="drive-status-label"><span class="status-dot"></span>READ + WRITE</span><span>Ready in Finder <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></div>
+          <div class="menu-preview" role="img" aria-label="Illustration of Nativol’s menu: Studio drive has read and write access, with Open in Finder, Stop Writing and Safely Eject actions.">
+            <div class="menu-preview-heading"><img src="assets/nativol.svg" width="26" height="26" alt=""><strong>Nativol</strong><span class="menu-preview-meta">MENU BAR</span></div>
+            <p class="menu-preview-status"><span class="status-dot"></span>1 NTFS volume mounted</p>
+            <div class="menu-preview-volume"><span>Studio drive</span><span class="menu-preview-access">Read &amp; write</span></div>
+            <div class="menu-preview-actions"><div><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg><span>Open in Finder</span></div><div><span class="menu-pause" aria-hidden="true">Ⅱ</span><span>Stop Writing</span></div><div><svg class="icon" aria-hidden="true"><use href="#i-eject"/></svg><span>Safely Eject</span></div></div>
+          </div>
+          <span class="scene-annotation" aria-hidden="true">Your drive.<br>Now part of your Mac.</span>
         </div>
-        <figcaption>Illustration · eligibility checks apply</figcaption>
+        <figcaption>Product illustration · sample drive · after setup</figcaption>
       </figure>
     </section>
 
-    <section class="workflow section wrap" id="features" aria-labelledby="features-title">
-      <div class="section-intro"><p class="eyebrow">LESS TO MANAGE</p><h2 id="features-title">Your workflow.<br>Uninterrupted.</h2><p>Same files. Same Finder.<br>A new way to work with NTFS.</p></div>
-      <div class="editorial-list">
-        <article class="editorial-row"><span class="row-number">01</span><div><h3>Finder, as usual.</h3><p>Copy, move and organize files on eligible NTFS drives. Keep using the tools and folders you already know.</p></div></article>
-        <article class="editorial-row"><span class="row-number">02</span><div><h3>Present in the menu bar.</h3><p>Check drive access and safely eject. Close the window and Nativol keeps running in the background.</p></div></article>
-        <article class="editorial-row"><span class="row-number">03</span><div><h3>One setup. Fewer prompts.</h3><p>Approve the service once. Everyday mounts use background access without storing your password. Start at sign-in if you choose.</p></div></article>
+    <div class="utility-strip wrap" aria-label="At a glance"><span><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg>Works in Finder</span><span><svg class="icon" aria-hidden="true"><use href="#i-menubar"/></svg>Lives in your menu bar</span><span><svg class="icon" aria-hidden="true"><use href="#i-local"/></svg>Files stay on your Mac</span><a href="#features">Take a closer look <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+
+    <section class="product-tour section wrap" id="features" aria-labelledby="features-title">
+      <div class="tour-heading">
+        <div><p class="eyebrow">A SMALL PART OF YOUR DAY</p><h2 id="features-title">Familiar from the first file.</h2></div>
+        <p>After the one-time setup, your files are right where you expect them. Nativol stays close by in the menu bar.</p>
       </div>
+      <fieldset class="tour-experience">
+        <legend class="tour-sr-only">Explore the Nativol workflow</legend>
+        <input class="tour-input" type="radio" name="nativol-tour" id="tour-connect" checked aria-controls="tour-panel-connect">
+        <input class="tour-input" type="radio" name="nativol-tour" id="tour-finder" aria-controls="tour-panel-finder">
+        <input class="tour-input" type="radio" name="nativol-tour" id="tour-eject" aria-controls="tour-panel-eject">
+        <div class="tour-rail">
+          <label class="tour-step" for="tour-connect"><span class="tour-step-number" aria-hidden="true">01</span><span class="tour-step-copy"><span class="tour-step-title">Connect</span><span class="tour-step-detail">A familiar place for your drive.</span></span><svg class="tour-step-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></label>
+          <label class="tour-step" for="tour-finder"><span class="tour-step-number" aria-hidden="true">02</span><span class="tour-step-copy"><span class="tour-step-title">Use Finder</span><span class="tour-step-detail">Work with files as usual.</span></span><svg class="tour-step-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></label>
+          <label class="tour-step" for="tour-eject"><span class="tour-step-number" aria-hidden="true">03</span><span class="tour-step-copy"><span class="tour-step-title">Eject</span><span class="tour-step-detail">Finish with a clean disconnect.</span></span><svg class="tour-step-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></label>
+        </div>
+        <div class="tour-stage">
+          <div class="tour-stage-meta"><span>EVERYDAY, BY DESIGN</span><span>Interactive illustration</span></div>
+          <div class="tour-panel" id="tour-panel-connect">
+            <div class="tour-scene tour-connect-scene" role="img" aria-label="Illustration of a Studio drive with read and write access in the Nativol menu. The menu includes Open in Finder, Stop Writing and Safely Eject.">
+              <div class="tour-small-drive" aria-hidden="true"><span class="tour-drive-mark">N</span><span class="tour-drive-name">STUDIO DRIVE</span><span class="tour-drive-light"></span></div>
+              <div class="tour-connection" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="tour-menu" aria-hidden="true"><div class="tour-menu-heading"><svg viewBox="0 0 24 24"><path d="m6 4-3 12h18L18 4Zm-3 12v4h18v-4M16 18h2"/></svg><strong>Studio drive</strong></div><div class="tour-menu-state"><span></span>Read &amp; write</div><div class="tour-menu-divider"></div><div class="tour-menu-row">Open in Finder<span>↗</span></div><div class="tour-menu-row">Stop Writing</div><div class="tour-menu-divider"></div><div class="tour-menu-row">Safely Eject<svg viewBox="0 0 20 20"><path d="m10 4-6 7h12ZM4 15h12"/></svg></div></div>
+            </div>
+            <div class="tour-caption"><h3>Your drive, ready in the menu bar.</h3><p>With automatic writing enabled, Nativol checks eligible NTFS drives before mounting them for read and write access.</p></div>
+          </div>
+          <div class="tour-panel" id="tour-panel-finder">
+            <div class="tour-scene tour-finder-scene" role="img" aria-label="Illustration of a Finder window for Studio drive, showing example folders Projects and Photos, and the file Notes.txt.">
+              <div class="tour-finder-window" aria-hidden="true"><div class="tour-finder-toolbar"><div class="tour-window-dots"><i></i><i></i><i></i></div><span class="tour-finder-back">‹</span><strong>Studio drive</strong><svg viewBox="0 0 24 24"><path d="M4 6h2m4 0h10M4 12h2m4 0h10M4 18h2m4 0h10"/></svg></div><div class="tour-finder-body"><div class="tour-finder-sidebar"><span>Locations</span><div><svg viewBox="0 0 24 24"><path d="m6 4-3 12h18L18 4Zm-3 12v4h18v-4M16 18h2"/></svg>Studio drive</div></div><div class="tour-finder-files"><div class="tour-file-heading"><span>Name</span><span>Kind</span></div><div class="tour-file-row"><svg class="tour-folder-icon" viewBox="0 0 24 24"><path d="M3 6h7l2 2h9v12H3Z"/></svg><span>Projects</span><small>Folder</small></div><div class="tour-file-row"><svg class="tour-folder-icon" viewBox="0 0 24 24"><path d="M3 6h7l2 2h9v12H3Z"/></svg><span>Photos</span><small>Folder</small></div><div class="tour-file-row"><svg class="tour-file-icon" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6Zm8 0v5h4M9 12h6M9 16h6"/></svg><span>Notes.txt</span><small>Text</small></div><div class="tour-finder-space"></div></div></div><div class="tour-finder-bottom">3 items<span>Example files</span></div></div>
+            </div>
+            <div class="tour-caption"><h3>Same Finder. Same way of working.</h3><p>Copy, move and organize files on your writable NTFS drive. There’s no separate file browser to learn.</p></div>
+          </div>
+          <div class="tour-panel" id="tour-panel-eject">
+            <div class="tour-scene tour-eject-scene" role="img" aria-label="Illustration of an external drive that has finished ejecting, with a check mark and the words Ready to unplug.">
+              <div class="tour-ejected-drive" aria-hidden="true"><div class="tour-small-drive"><span class="tour-drive-mark">N</span><span class="tour-drive-name">STUDIO DRIVE</span><span class="tour-drive-light"></span></div><span class="tour-eject-check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span></div><span class="tour-eject-status" aria-hidden="true">Ready to unplug</span>
+            </div>
+            <div class="tour-caption"><h3>A small habit. A proper finish.</h3><p>Safely eject through Finder or the Nativol menu. Wait for ejection to finish before unplugging.</p></div>
+          </div>
+        </div>
+      </fieldset>
     </section>
 
     <section class="compatibility-section" id="compatibility" aria-labelledby="compatibility-title">
       <div class="wrap compatibility-layout">
-        <div class="compatibility-intro"><p class="eyebrow"><span class="status-dot"></span> INTEL TESTING BETA</p><h2 id="compatibility-title">A small app.<br>A specific<br>setup.</h2><p>Built for a defined configuration. Broader Mac and drive support will follow separate testing.</p><a class="text-link" href="guide.html">Check the full requirements <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        <div class="compatibility-intro"><p class="eyebrow"><span class="status-dot"></span> INTEL TESTING BETA</p><h2 id="compatibility-title">A good fit<br>starts here.</h2><p>This release supports a specific Intel configuration. Check yours before downloading.</p><a class="text-link" href="guide.html">Check the full requirements <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
         <div class="compatibility-details">
           <p class="spec-heading">RELEASE SPECIFICATION / 0.5.0-BETA.1</p>
           <dl class="compatibility-table">

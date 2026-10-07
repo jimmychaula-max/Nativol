@@ -1,0 +1,215 @@
+/* Product-focused refinement. Shared foundations remain in styles.css. */
+:root { --paper: #f7f7f2; --line: #d9ded4; }
+.wrap { width: min(1240px, calc(100% - 96px)); }
+.nav { min-height: 84px; }
+.nav-links { font-size: 14px; }
+.brand { font-size: 26px; letter-spacing: -1.1px; }
+.button { min-height: 56px; padding: 16px 23px; font-size: 15px; gap: 22px; box-shadow: 0 1px 2px #19251f12; }
+.button-small { min-height: 42px; padding: 10px 16px; font-size: 13px; }
+.text-link { font-size: 14px; }
+.hero { grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr); gap: 70px; padding: 54px 0 50px; border-bottom: 0; }
+.hero-copy { padding-bottom: 24px; }
+.hero .eyebrow { font-size: 11px; letter-spacing: .075em; margin-bottom: 26px; }
+.hero h1 { font-size: clamp(78px, 7.2vw, 100px); line-height: 1.01; letter-spacing: -.067em; margin-bottom: 28px; }
+.hero h1 span { color: var(--forest); }
+.hero-description { font-size: 18px; line-height: 1.7; max-width: 410px; margin-bottom: 30px; }
+.hero-actions { gap: 24px; }
+.hero-note { display: block; margin-top: 23px; font: 400 13px/1.7 Manrope, sans-serif; }
+.hero-note p { margin: 0; }
+.hero-note p:first-child { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 15px; margin-bottom: 5px; }
+.hero-note strong { font-weight: 600; color: var(--ink); }
+.hero-note span { font-size: 12px; }
+.drive-figure { padding-top: 0; }
+.drive-stage { height: 550px; aspect-ratio: auto; border-radius: 12px; overflow: hidden; background: #e9ede5; border: 1px solid #dee5d7; }
+.drive-stage:before { content: ''; position: absolute; top: 62px; left: 24px; right: 24px; height: 1px; background: #ced8c5; }
+.drive-stage-label { inset: 22px 26px auto; font-size: 10px; letter-spacing: .05em; }
+.scene-menu-icon { width: 33px; height: 29px; margin-top: -3px; display: grid; place-items: center; background: #cad7c2; border-radius: 5px; }
+.scene-menu-icon img { width: 19px; height: 19px; }
+.drive-art { position: absolute; width: 88%; height: auto; right: -13%; top: 20px; opacity: .97; }
+.menu-preview { position: absolute; left: 30px; bottom: 64px; width: 320px; background: #fdfefb; border: 1px solid #c5cfc0; border-radius: 12px; box-shadow: 0 25px 55px -22px #243c3845, 0 2px 6px #243c3810; padding: 18px 10px 10px; font: 400 14px/1.45 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.menu-preview-heading { display: flex; align-items: center; gap: 9px; padding: 0 10px; }
+.menu-preview-heading strong { font-size: 15px; font-weight: 600; }
+.menu-preview-meta { margin-left: auto; font: 400 9px/1.5 var(--mono); color: var(--muted); letter-spacing: .04em; }
+.menu-preview-status { padding: 13px 10px 14px; margin: 0; display: flex; align-items: center; gap: 8px; color: #48663d; font-size: 12px; }
+.menu-preview-volume { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #e9eee5; padding: 11px 12px; border-radius: 5px; font-weight: 500; }
+.menu-preview-access { font-size: 11px; color: #3f6334; }
+.menu-preview-actions { padding: 6px 3px 0; }
+.menu-preview-actions>div { display: flex; align-items: center; gap: 11px; padding: 7px 9px; }
+.menu-preview-actions .icon, .menu-pause { width: 16px; height: 16px; color: #60735a; }
+.menu-pause { display: grid; place-items: center; font-size: 15px; }
+.scene-annotation { position: absolute; right: 27px; bottom: 24px; font-size: 11px; line-height: 1.6; color: #52644b; text-align: right; }
+.drive-figure figcaption { padding-top: 11px; font: 400 11px/1.6 Manrope, sans-serif; color: var(--muted); }
+.utility-strip { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-block: 1px solid var(--line); padding-block: 23px; font-size: 13px; color: var(--muted); }
+.utility-strip>span, .utility-strip>a { display: flex; align-items: center; gap: 10px; }
+.utility-strip .icon { width: 18px; height: 18px; color: #587249; }
+.utility-strip>a { text-decoration: none; color: var(--ink); font-weight: 500; }
+.utility-strip>a:hover { text-decoration: underline; }
+.section { padding-block: 88px; }
+h2 { font-size: 50px; letter-spacing: -.05em; }
+.eyebrow { font-size: 11px; }
+.compatibility-section { padding-block: 82px; }
+.compatibility-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 90px; }
+.compatibility-intro h2 { font-size: 60px; line-height: 1.07; }
+.compatibility-intro>p:not(.eyebrow) { font-size: 16px; line-height: 1.7; max-width: 350px; }
+.compatibility-intro .eyebrow, .spec-heading { font-size: 11px; }
+.compatibility-table>div { font-size: 14px; padding-block: 15px; }
+.compatibility-table small { font-size: 12px; }
+.compatibility-notes p { font-size: 13px; line-height: 1.75; }
+.setup-section .section-intro { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 0 30px; margin-bottom: 35px; }
+.setup-section .eyebrow { grid-column: 1 / -1; margin-bottom: 20px; }
+.setup-section h2 { font-size: 42px; margin: 0; }
+.setup-section .text-link { margin-bottom: 5px; }
+.steps { gap: 34px; }
+.steps h3 { font-size: 20px; }
+.steps p { font-size: 15px; line-height: 1.75; }
+.steps .row-number { font-size: 11px; margin-bottom: 20px; }
+.support-section { padding-block: 70px 52px; }
+.support-layout { gap: 0 60px; }
+.support-layout h2 { font-size: 48px; }
+.support-copy { padding-top: 35px; }
+.support-copy>p:first-child { font-size: 17px; }
+.support-footnote, .network-note { font-size: 13px; }
+.crypto-disclosure { margin-top: 32px; }
+.disclosure-hint { font-size: 11px; }
+.wallet-label { font-size: 16px; }
+.wallet-asset, .wallet-network, .binance-pay-recipient, .binance-pay-note, .binance-pay-id-label { font-size: 12px; }
+.wallet-address { font-size: 12px; }
+.wallet-copy { font-size: 12px; min-height: 42px; }
+.faq-section { gap: 70px; padding-block: 70px; }
+.faq-section h2 { font-size: 42px; }
+.faq-list summary { font-size: 16px; padding-block: 20px; }
+.faq-list details p { font-size: 15px; line-height: 1.75; }
+.download-section { padding-block: 36px; }
+.download-section h2 { font-size: 38px; }
+.download-section .eyebrow, .download-actions .text-link { font-size: 12px; }
+.site-footer { margin-top: 60px; padding-top: 32px; }
+.footer-wordmark { font-size: clamp(90px, 15vw, 190px); letter-spacing: -.067em; line-height: 1.08; margin-block: 24px; }
+.footer-top, .footer-bottom { font: 400 12px/1.7 Manrope,sans-serif; }
+.footer-links { font-size: 13px; }
+.footer-bottom { padding-block: 19px 28px; }
+@media (max-width: 1100px) {
+  .wrap { width: calc(100% - 64px); }
+  .hero { gap: 42px; }
+  .hero h1 { font-size: 79px; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .hero-description { font-size: 17px; }
+  .drive-stage { height: 520px; }
+  .menu-preview { width: calc(100% - 44px); left: 22px; bottom: 57px; max-width: 310px; }
+  .drive-art { width: 110%; right: -28%; top: 10px; }
+  .utility-strip { flex-wrap: wrap; justify-content: flex-start; gap: 16px 32px; font-size: 12px; }
+  .utility-strip>a { margin-left: auto; }
+  .compatibility-layout { gap: 55px; }
+  .compatibility-intro h2 { font-size: 53px; }
+  .compatibility-table>div { font-size: 13px; }
+  .setup-section .section-intro { display: block; }
+  .setup-section .text-link { margin-top: 22px; }
+  .support-actions { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+@media (max-width: 800px) {
+  .hero { gap: 28px; }
+  .hero h1 { font-size: 64px; }
+  .hero .eyebrow { font-size: 10px; }
+  .hero-description { font-size: 16px; }
+  .drive-stage { height: 495px; }
+  .menu-preview { left: 14px; width: calc(100% - 28px); font-size: 13px; padding-inline: 7px; }
+  .menu-preview-volume { padding-inline: 9px; }
+  .menu-preview-meta { display: none; }
+  .menu-preview-access { font-size: 10px; }
+  .drive-stage-label { inset-inline: 20px; font-size: 9px; }
+  .utility-strip { display: grid; grid-template-columns: 1fr 1fr; }
+  .utility-strip>a { margin-left: 0; }
+  .section { padding-block: 68px; }
+  .compatibility-layout { gap: 36px; }
+  .compatibility-intro h2 { font-size: 46px; }
+  .compatibility-intro>p:not(.eyebrow) { font-size: 15px; }
+  .compatibility-notes p { font-size: 12px; }
+  .steps { gap: 24px; }
+  .steps p { font-size: 14px; }
+  .support-layout h2 { font-size: 40px; }
+}
+@media (max-width: 700px) {
+  .wrap { width: calc(100% - 48px); }
+  .nav { min-height: 76px; }
+  .button-small { font-size: 12px; padding: 10px 13px; }
+  .hero { grid-template-columns: 1fr; gap: 34px; padding-block: 40px 32px; }
+  .hero-copy { padding-bottom: 0; }
+  .hero h1 { font-size: clamp(65px, 15vw, 88px); margin-bottom: 23px; }
+  .hero .eyebrow { margin-bottom: 24px; font-size: 10px; }
+  .hero-description { font-size: 17px; max-width: 470px; margin-bottom: 25px; }
+  .hero-actions { flex-direction: row; align-items: center; gap: 22px; }
+  .hero-note { font-size: 13px; margin-top: 20px; }
+  .hero-note span { font-size: 12px; }
+  .drive-stage { height: 430px; }
+  .drive-art { width: 81%; top: -24px; right: -6%; }
+  .menu-preview { left: 23px; bottom: 40px; width: 300px; font-size: 14px; padding: 15px 9px 8px; }
+  .menu-preview-meta { display: block; }
+  .menu-preview-access { font-size: 11px; }
+  .drive-stage-label { inset: 19px 23px auto; font-size: 10px; }
+  .scene-annotation { display: none; }
+  .drive-figure figcaption { font-size: 11px; }
+  .utility-strip { gap: 17px 16px; padding-block: 20px; font-size: 12px; }
+  .utility-strip .icon { width: 17px; height: 17px; }
+  .utility-strip>span, .utility-strip>a { gap: 8px; }
+  .section { padding-block: 60px; }
+  .compatibility-section { padding-block: 59px; }
+  .compatibility-layout { grid-template-columns: 1fr; gap: 35px; }
+  .compatibility-intro h2 { font-size: 50px; }
+  .compatibility-intro .eyebrow, .spec-heading { font-size: 10px; }
+  .compatibility-table>div { font-size: 13px; }
+  .compatibility-notes p { font-size: 13px; }
+  .setup-section h2 { font-size: 36px; }
+  .steps p { font-size: 15px; }
+  .steps .row-number { margin-bottom: 0; }
+  .support-section { padding-block: 58px 43px; }
+  .support-layout { gap: 0; }
+  .support-layout h2 { font-size: 40px; }
+  .support-copy { padding-top: 0; }
+  .support-copy>p:first-child { font-size: 16px; }
+  .support-actions { flex-direction: row; align-items: center; gap: 20px; }
+  .support-footnote { font-size: 12px; }
+  .wallet-copy { font-size: 12px; min-height: 42px; }
+  .wallet-address { font-size: 12px; }
+  .binance-pay { grid-template-columns: 122px minmax(0,1fr); gap: 17px; }
+  .binance-pay-qr { width: 122px; }
+  .faq-section { gap: 25px; }
+  .faq-section h2 { font-size: 36px; }
+  .faq-list summary { font-size: 15px; }
+  .faq-list details p { font-size: 14px; }
+  .download-section h2 { font-size: 37px; }
+  .site-footer { margin-top: 46px; }
+  .footer-wordmark { font-size: clamp(86px, 24vw, 144px); margin-block: 27px; }
+  .footer-top, .footer-bottom { font-size: 11px; }
+  .footer-links { gap: 18px; font-size: 12px; }
+}
+@media (max-width: 420px) {
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .hero h1 { font-size: 67px; }
+  .hero-note p:first-child { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .drive-stage { height: 405px; }
+  .drive-art { width: 110%; right: -30%; top: -5px; }
+  .menu-preview { width: calc(100% - 34px); left: 17px; bottom: 24px; }
+  .utility-strip { font-size: 11px; gap: 17px 12px; }
+  .utility-strip>span, .utility-strip>a { gap: 7px; }
+  .support-actions { flex-direction: column; align-items: flex-start; }
+  .hero-note { font-size: 12px; }
+  .download-section h2 { font-size: 34px; }
+}
+@media (max-width: 359px) {
+  .wrap { width: calc(100% - 36px); }
+  .hero h1 { font-size: 59px; }
+  .hero-description { font-size: 16px; }
+  .hero .eyebrow { font-size: 9px; }
+  .brand { font-size: 23px; }
+  .button-small { font-size: 11px; padding-inline: 10px; gap: 10px; }
+  .menu-preview { font-size: 12px; }
+  .menu-preview-heading strong { font-size: 14px; }
+  .menu-preview-volume { gap: 5px; padding-inline: 7px; }
+  .menu-preview-access { font-size: 10px; }
+  .utility-strip { grid-template-columns: 1fr; font-size: 12px; gap: 13px; }
+  .compatibility-table>div { font-size: 12px; }
+  .binance-pay { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 7px; }
+  .footer-bottom>span:last-child { text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print { .utility-strip { display: none; } .site-footer { background: white; color: black; } }
