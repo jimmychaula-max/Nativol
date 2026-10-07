@@ -44,7 +44,7 @@ The initial live deployment loaded over HTTPS with working JavaScript. The [GitH
 python3 -m http.server 8080 --directory site
 ```
 
-Open `http://localhost:8080`. The site uses relative links, system fonts, and local CSS and JavaScript. It has no analytics, cookies, remote fonts, embedded payment forms, or automatic third-party requests. Buy Me a Coffee opens only when selected. The Binance Pay QR is a local image; the site does not create payments or receive payment confirmations.
+Open `http://localhost:8080`. The site uses relative links, self-hosted fonts, and local CSS and JavaScript. It has no analytics, cookies, remote fonts, embedded payment forms, or automatic third-party requests. Buy Me a Coffee opens only when selected. The Binance Pay QR is a local image; the site does not create payments or receive payment confirmations.
 
 Before announcing a deployment:
 

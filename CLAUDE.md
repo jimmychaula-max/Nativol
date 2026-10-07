@@ -20,7 +20,7 @@ Read `docs/BUILDING.md` for exact dependency, release, and DMG commands. Builds 
 - `engine/nativol-ntfs-health.c`: GPL read-only preflight over an inherited descriptor.
 - `patches/`: GPL modifications to pinned NTFS-3G source.
 - `Tests/` and `scripts/test-*`: pure validation and explicitly separate disposable-image harnesses.
-- `site/`: static HTML/CSS with local JavaScript for the illustrative menu and donation controls; no third-party tracking.
+- `site/`: static HTML/CSS with local JavaScript for donation controls; self-hosted fonts and no third-party tracking.
 
 ## Scope and changes
 

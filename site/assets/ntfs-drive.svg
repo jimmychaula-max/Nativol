@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="580" viewBox="0 0 600 580" fill="none" role="img" aria-labelledby="drive-title drive-description">
+  <title id="drive-title">An NTFS drive, ready for your Mac</title>
+  <desc id="drive-description">A silver external drive with a forest-green NTFS label, a small illuminated indicator, and a black cable curling upwards.</desc>
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="190" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFCF8"/>
+      <stop offset=".26" stop-color="#DBDDD7"/>
+      <stop offset=".51" stop-color="#F4F4EE"/>
+      <stop offset=".79" stop-color="#B8BDB4"/>
+      <stop offset="1" stop-color="#D7DAD2"/>
+    </linearGradient>
+    <linearGradient id="bevel" x1="15" y1="0" x2="155" y2="268" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white"/>
+      <stop offset=".5" stop-color="#D1D6CC"/>
+      <stop offset="1" stop-color="#929B8E"/>
+    </linearGradient>
+    <linearGradient id="chassis" x1="129" y1="220" x2="451" y2="445" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#51594E"/>
+      <stop offset=".48" stop-color="#242D25"/>
+      <stop offset="1" stop-color="#111C16"/>
+    </linearGradient>
+    <linearGradient id="cable" x1="250" y1="91" x2="465" y2="134" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A251D"/>
+      <stop offset=".55" stop-color="#394237"/>
+      <stop offset="1" stop-color="#1B281F"/>
+    </linearGradient>
+    <linearGradient id="label" x1="48" y1="165" x2="138" y2="219" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#315843"/>
+      <stop offset="1" stop-color="#183E2B"/>
+    </linearGradient>
+    <radialGradient id="shadow">
+      <stop stop-color="#15251A" stop-opacity=".24"/>
+      <stop offset=".55" stop-color="#15251A" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#15251A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="contact-shadow">
+      <stop stop-color="#0D2014" stop-opacity=".27"/>
+      <stop offset="1" stop-color="#0D2014" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Soft product shadow is vector geometry, so the illustration stays editable. -->
+  <ellipse cx="300" cy="412" rx="190" ry="61" transform="rotate(-15 300 412)" fill="url(#shadow)"/>
+  <ellipse cx="336" cy="416" rx="117" ry="22" transform="rotate(-30 336 416)" fill="url(#contact-shadow)"/>
+
+  <!-- A single continuous cable, with a restrained edge highlight. -->
+  <path d="M250 150C241 136 247 118 261 107C291 83 332 92 365 109C401 128 430 133 452 113C466 100 468 82 470 60" stroke="#263525" stroke-opacity=".08" stroke-width="15" stroke-linecap="round" transform="translate(0 6)"/>
+  <path d="M250 150C241 136 247 118 261 107C291 83 332 92 365 109C401 128 430 133 452 113C466 100 468 82 470 60" stroke="url(#cable)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M248 148C240 135 247 118 261 107C291 83 332 92 365 109C401 128 430 133 452 113C466 100 468 82 470 60" stroke="#6D7867" stroke-opacity=".65" stroke-width="1.5" stroke-linecap="round"/>
+  <g transform="translate(470 57) rotate(5)">
+    <rect x="-7" y="-16" width="14" height="26" rx="4" fill="#27332A"/>
+    <rect x="-6" y="-28" width="12" height="15" rx="3.5" fill="#A5ADA3"/>
+    <rect x="-3.5" y="-26" width="7" height="8" rx="1.5" fill="#354037"/>
+    <path d="M-4-10V3" stroke="#626F60" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- The extrusion and inset cover use the same precise perspective. -->
+  <g transform="matrix(.866 -.5 .63 .78 125 233)">
+    <rect width="180" height="270" rx="17" fill="#233025"/>
+  </g>
+  <path d="M141 237L286 153L449 356C450 361 446 365 441 368L308 445C303 448 296 447 292 442L137 248C134 244 136 240 141 237Z" fill="url(#chassis)"/>
+  <g transform="matrix(.866 -.5 .63 .78 125 218)">
+    <rect x="0" y="0" width="180" height="270" rx="17" fill="url(#bevel)" stroke="#A6AEA0" stroke-width="1"/>
+    <rect x="4" y="4" width="172" height="260" rx="14" fill="url(#metal)"/>
+    <rect x="5.5" y="5.5" width="169" height="257" rx="12.5" stroke="white" stroke-opacity=".65" stroke-width="1"/>
+
+    <!-- Fine longitudinal machining lines and two small fasteners. -->
+    <g stroke="#FFFFFF" stroke-opacity=".2" stroke-width=".5">
+      <path d="M17 24V246M25 17V253M33 15V255M41 15V255M49 15V255M57 15V255M65 15V255M73 15V255M81 15V255M89 15V255M97 15V255M105 15V255M113 15V255M121 15V255M129 15V255M137 15V255M145 15V255M153 17V253M161 24V246"/>
+    </g>
+    <g fill="#A7AEA3" stroke="#F7F8F2" stroke-width=".8">
+      <circle cx="18" cy="18" r="3"/>
+      <circle cx="162" cy="252" r="3"/>
+    </g>
+    <g stroke="#747F70" stroke-width=".8">
+      <path d="M16.5 18H19.5M160.5 252H163.5"/>
+    </g>
+
+    <!-- Engraved Nativol mark, followed by the physical filesystem label. -->
+    <path d="M78 66V95M80 66L100 95M102 66V95" stroke="#8C9788" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M78 65V94M80 65L100 94M102 65V94" stroke="#A2AB9C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="46" y="167" width="88" height="49" rx="5" fill="#8F998A" opacity=".4"/>
+    <rect x="46" y="165" width="88" height="49" rx="5" fill="url(#label)" stroke="#173F2C" stroke-width=".7"/>
+    <path d="M51 166H129" stroke="#6B8A71" stroke-width=".8"/>
+    <text x="90" y="191" text-anchor="middle" fill="#F3F7EC" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="2">NTFS</text>
+    <path d="M65 202H115" stroke="#9AB091" stroke-width="1"/>
+    <circle cx="90" cy="245" r="3.5" fill="#557148"/>
+    <circle cx="90" cy="245" r="2" fill="#C1F16D"/>
+    <circle cx="89.5" cy="244.5" r=".65" fill="#E4FFC0"/>
+  </g>
+  <path d="M302 434L438 355" stroke="#596551" stroke-opacity=".7" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- The plug's strain relief meets the top rear edge. -->
+  <g transform="translate(251 149) rotate(-35)">
+    <rect x="-9" y="-11" width="18" height="19" rx="3" fill="#29362B"/>
+    <path d="M-6-6H6M-6-2H6M-6 2H6" stroke="#52614C" stroke-width="1"/>
+  </g>
+</svg>

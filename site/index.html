@@ -3,77 +3,116 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Nativol brings eligible NTFS drives to your Mac, with automatic writing, Finder access, and a quiet place in your menu bar. Explore the Intel beta.">
-  <meta name="theme-color" content="#f7f8f5">
-  <meta property="og:title" content="Nativol — Your NTFS drives. At home on Mac.">
-  <meta property="og:description" content="A little less drive management. Meet the free Nativol Intel beta and support its development.">
+  <meta name="description" content="Read and write eligible NTFS drives in Finder with Nativol. Free, open-source software for Intel Macs. Explore the testing beta and installation guide.">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta property="og:title" content="Nativol — Read. Write. Back to work.">
+  <meta property="og:description" content="Copy files to your NTFS drives in Finder. A free, open-source utility for Intel Macs.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Nativol">
   <meta property="og:url" content="https://nativol.org/">
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://nativol.org/">
-  <title>Nativol — Your NTFS drives. At home on Mac.</title>
+  <title>Nativol — Read. Write. Back to work.</title>
   <link rel="icon" href="assets/nativol.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261007-wallets">
+  <link rel="preload" href="assets/fonts/Manrope%5Bwght%5D.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261007-editorial-3">
   <script src="config.js?v=20261007-coffee" defer></script>
   <script src="site.js?v=20261007-wallets" defer></script>
 </head>
 <body>
   <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></symbol>
-    <symbol id="i-drive" viewBox="0 0 24 24"><path d="m5 4-3 11v4a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-4L19 4ZM2 15h20"/><path d="M17 18h1"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9S4 17 4 12V6Z"/><path d="m8 12 3 3 5-5"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18m-5-3h1"/></symbol>
-    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V4h7l2 3h9v13H3Z"/></symbol>
-    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M4 8h13v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4Zm13 1h2a3 3 0 0 1 0 6h-2M7 2v2m5-2v2M2 22h19"/></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20 5c-3-3-7-1-8 2-1-3-5-5-8-2-5 5 8 15 8 15S25 10 20 5Z"/></symbol>
-    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"/></symbol>
-    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 7V3L3 6v14h18V7H3m18 4h-6v5h6"/><path d="M17 13.5h.1"/></symbol>
   </defs></svg>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="wrap nav" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Nativol home"><img src="assets/nativol.svg" width="35" height="35" alt="">Nativol</a>
-      <div class="nav-links"><a href="#features">Features</a><a href="#compatibility">Compatibility</a><a href="#support">Support the project</a></div>
-      <a id="nav-download-link" class="button button-small" href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg">Download Intel DMG <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+      <a class="brand" href="/" aria-label="Nativol home"><img src="assets/nativol.svg" width="32" height="32" alt="">Nativol</a>
+      <div class="nav-links"><a href="#features">The app</a><a href="#compatibility">Compatibility</a><a href="#support">Support</a></div>
+      <a id="nav-download-link" class="button button-small button-outline" href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg">Download beta <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
     </nav>
   </header>
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
-      <a class="release-pill" href="#compatibility"><span class="status-dot"></span>Meet the Intel beta <span class="pill-version">v0.5.0</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      <h1 id="hero-title">Your NTFS drives.<br><span>At home on Mac.</span></h1>
-      <p class="hero-description">Connect your drive. Keep using Finder.<br>Nativol takes care of eligible NTFS mounts, quietly in your menu bar.</p>
-      <div class="actions hero-actions"><a id="hero-download-link" class="button" href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download Intel DMG</a><a class="text-link" href="guide.html#installation">How to install <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      <p class="hero-note">Intel only <span>·</span> macOS 15.7.9 <span>·</span> Free &amp; open source</p>
-      <div class="product-scene" aria-label="Illustration of the Nativol app and menu bar">
-        <div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div>
-        <div class="desktop-bar"><div class="desktop-label"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg><strong>Finder</strong><span>File</span><span>Edit</span><span>View</span></div><div class="desktop-right"><button id="menu-toggle" hidden class="menu-toggle" type="button" aria-label="Preview the Nativol menu" aria-expanded="false" aria-controls="demo-menu"><img src="assets/nativol.svg" width="22" height="22" alt=""></button><span class="desktop-battery" aria-hidden="true"></span><span>9:41</span></div></div>
-        <div id="menu-hint" class="menu-hint" hidden aria-hidden="true">Try the menu <span>↗</span></div>
-        <div id="demo-menu" class="demo-menu" hidden><div class="demo-menu-title"><strong>Nativol</strong><span class="mini-tag">Preview</span></div><div class="demo-menu-drive"><svg class="icon" aria-hidden="true"><use href="#i-drive"/></svg><div><strong>Studio drive</strong><span>NTFS · Read &amp; write</span></div><span class="status-dot"></span></div><p>Your drives, one click away.</p><a href="guide.html">Explore setup &amp; safe eject <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-        <div class="app-window">
-          <div class="app-titlebar"><div class="traffic-lights" aria-hidden="true"><i></i><i></i><i></i></div><span>Nativol</span><span class="app-version">Intel beta</span></div>
-          <div class="app-layout">
-            <aside class="app-sidebar" aria-label="Illustrated app sidebar"><div class="app-brand"><img src="assets/nativol.svg" width="33" height="33" alt="">Nativol</div><span class="sidebar-caption">WORKSPACE</span><div class="sidebar-item selected"><svg class="icon" aria-hidden="true"><use href="#i-drive"/></svg>Volumes <span>1</span></div><div class="sidebar-item"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Setup</div><div class="sidebar-item"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>Activity</div><div class="sidebar-bottom"><span class="status-dot"></span>Here when you need it</div></aside>
-            <div class="app-main"><div class="app-heading"><div><span class="app-eyebrow">YOUR WORKSPACE</span><h2>Your volumes, at a glance.</h2><p>A familiar place for your external drives.</p></div><span class="connected-label"><span class="status-dot"></span>1 connected</span></div><div class="app-drive"><div class="drive-tile"><svg class="icon" aria-hidden="true"><use href="#i-drive"/></svg></div><div class="app-drive-name"><strong>Studio drive</strong><span>External · NTFS · 256 GB</span></div><span class="write-label"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Read &amp; write</span></div><div class="app-details"><div><span>Access</span><strong>Ready in Finder</strong></div><div><span>Connection</span><strong>USB</strong></div><div><span>Filesystem</span><strong>NTFS</strong></div></div><div class="app-footer"><span><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Checked before writing</span><span class="finder-label"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg>Open in Finder</span></div></div>
-          </div>
+      <div class="hero-copy">
+        <p class="eyebrow">NTFS FOR MAC <span aria-hidden="true">/</span> INTEL BETA</p>
+        <h1 id="hero-title">Read.<br>Write.<br>Back to work.</h1>
+        <p class="hero-description">Copy files to your NTFS drives in Finder. Nativol handles the mount. You get on with your work.</p>
+        <div class="actions hero-actions">
+          <a id="hero-download-link" class="button" href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg">Download Intel beta <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+          <a class="text-link" href="guide.html#installation">Installation guide <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <div class="scene-bottom"><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Connect. Work. Eject.</span><span>Less in your way. More in your flow.</span></div>
+        <p class="hero-note"><span>0.5.0-beta.1 · 3.9 MB · Free &amp; open source</span><span>Intel · macOS 15.7.9 · macFUSE 5.4.0</span></p>
       </div>
-      <p class="scene-caption">Interactive illustration. This page never accesses your drives.</p>
-      <noscript><p class="scene-caption">The menu preview and donation options use JavaScript. The rest of this site works without it.</p></noscript>
+      <figure class="drive-figure">
+        <div class="drive-stage">
+          <div class="drive-stage-label"><span>01 / EXTERNAL NTFS</span><span class="crosshair" aria-hidden="true">+</span></div>
+          <img class="drive-art" src="assets/ntfs-drive.svg" width="600" height="580" alt="Technical illustration of an external NTFS drive">
+          <div class="drive-status"><span class="drive-status-label"><span class="status-dot"></span>READ + WRITE</span><span>Ready in Finder <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span></div>
+        </div>
+        <figcaption>Illustration · eligibility checks apply</figcaption>
+      </figure>
     </section>
-    <section class="features wrap section" id="features" aria-labelledby="features-title">
-      <div class="section-heading"><p class="eyebrow">SMALL APP. EVERYDAY DIFFERENCE.</p><h2 id="features-title">A little less drive management.</h2><p>You have files to work on. Your filesystem shouldn't be the project.</p></div>
-      <div class="feature-grid"><article class="feature"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg></span><h3>Finder, as usual.</h3><p>Work with familiar files and folders. Nativol brings writing to eligible NTFS drives, right where you already work.</p></article><article class="feature"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></span><h3>A quiet place up top.</h3><p>See access status and safely eject from the menu bar. Enable launch at login and Nativol returns after sign-in.</p></article><article class="feature"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><h3>One setup. Fewer prompts.</h3><p>Approve background access once. Everyday mounts and ejects then use the service without saving your password.</p></article></div>
+
+    <section class="workflow section wrap" id="features" aria-labelledby="features-title">
+      <div class="section-intro"><p class="eyebrow">LESS TO MANAGE</p><h2 id="features-title">Your workflow.<br>Uninterrupted.</h2><p>Same files. Same Finder.<br>A new way to work with NTFS.</p></div>
+      <div class="editorial-list">
+        <article class="editorial-row"><span class="row-number">01</span><div><h3>Finder, as usual.</h3><p>Copy, move and organize files on eligible NTFS drives. Keep using the tools and folders you already know.</p></div></article>
+        <article class="editorial-row"><span class="row-number">02</span><div><h3>Present in the menu bar.</h3><p>Check drive access and safely eject. Close the window and Nativol keeps running in the background.</p></div></article>
+        <article class="editorial-row"><span class="row-number">03</span><div><h3>One setup. Fewer prompts.</h3><p>Approve the service once. Everyday mounts use background access without storing your password. Start at sign-in if you choose.</p></div></article>
+      </div>
     </section>
-    <section class="how-section wrap section" aria-labelledby="how-title"><div class="how-intro"><p class="eyebrow">FROM PLUGGED IN TO GETTING ON</p><h2 id="how-title">Set up once.<br>Settle into your work.</h2><a class="text-link" href="guide.html">Walk through setup <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div><ol class="steps"><li><span class="step-number">01</span><div><h3>Make your Mac ready.</h3><p>Install macFUSE, then approve Nativol's background service and the required macOS permissions.</p></div></li><li><span class="step-number">02</span><div><h3>Turn on automatic writing.</h3><p>One opt-in applies to eligible external NTFS drives. Each drive gets an identity and health check before mounting.</p></div></li><li><span class="step-number">03</span><div><h3>Use Finder. Eject when done.</h3><p>Copy your files, finish your work, and safely eject through Finder or Nativol's menu.</p></div></li></ol></section>
-    <section class="wrap compatibility-section" id="compatibility" aria-labelledby="compatibility-title"><div class="compatibility-panel"><div class="compatibility-intro"><span class="dark-pill"><span class="status-dot"></span>Intel testing beta</span><h2 id="compatibility-title">Start with<br>the right setup.</h2><p>We're beginning with a carefully bounded Intel release. More Macs and drives need real-world testing.</p><a class="light-link" href="guide.html">Read the install &amp; test guide <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div><div class="compatibility-table"><div class="compat-row"><span>Mac &amp; macOS</span><strong>Intel · macOS 15.7.9</strong></div><div class="compat-row"><span>Drive</span><strong>External, single-partition NTFS</strong></div><div class="compat-row"><span>Connection</span><strong>USB or Thunderbolt</strong></div><div class="compat-row"><span>Required dependency</span><strong>macFUSE 5.4.0 <small>Installed separately</small></strong></div><div class="compat-row"><span>Apple silicon</span><strong class="muted-light">On hold</strong></div><p class="compat-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Start with backed-up spare media. Unsupported, dirty or hibernated volumes are refused.</p></div></div></section>
-    <section class="download-section wrap section" id="get-build" aria-labelledby="download-title"><div><p class="eyebrow">NATIVOL 0.5.0-BETA.1</p><h2 id="download-title">Your next drive,<br>a little more at home.</h2><p>Try the Intel beta and help shape what comes next.</p></div><div class="download-actions"><a id="download-link" class="button" href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span>Download Intel DMG</span></a><p class="small">0.5.0-beta.1 · 3.9 MB<br>Intel only · macOS 15.7.9</p><a class="text-link" href="guide.html#installation">How to install <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a id="release-link" class="text-link" href="https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1">Release notes &amp; checksums</a><a id="source-link" class="text-link" href="https://github.com/jimmychaula-max/Nativol">Source &amp; licenses <svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></a></div><p class="beta-note">This is a testing release. Signing, notarization and broader hardware validation are still ahead.</p></section>
-    <section class="support-section" id="support" aria-labelledby="support-title"><div class="wrap"><div class="support-heading"><span class="support-kicker"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>INDEPENDENTLY MADE. COMMUNITY SUPPORTED.</span><h2 id="support-title">A little support.<br>A lot of possibility.</h2><p>Nativol is free to use. If it makes your day easier, you can help support development, testing and the next release.</p></div><div class="support-grid"><article class="coffee-card"><div class="coffee-art" aria-hidden="true"><svg viewBox="0 0 180 160"><path class="cup-shadow" d="M29 137c22-15 111-16 128 0 11 11-90 25-128 0"/><path class="cup-steam" d="M67 38c-14-17 14-19 0-35m31 35c-14-17 14-19 0-35"/><path class="cup-handle" d="M118 61h12c32 0 32 49 1 49h-11"/><path class="cup-body" d="M42 50h82v51c0 48-82 48-82 0Z"/><path class="cup-rim" d="M43 50h80"/><path class="cup-heart" d="M84 83c-9-15-25-2-17 8l17 17 17-17c8-10-8-23-17-8Z"/></svg></div><div class="coffee-copy"><p class="eyebrow">A SMALL THANK-YOU</p><h3>Buy me a coffee.</h3><p>A coffee for the late-night builds and the next good idea.</p><a id="coffee-link" class="button coffee-button" hidden rel="noopener noreferrer" target="_blank">Buy Me a Coffee <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><p id="coffee-pending" class="pending-note"><span class="status-dot"></span>Coffee link coming soon</p></div></article><article class="crypto-card"><div class="crypto-heading"><span class="crypto-symbol"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span><span class="small">DIRECT SUPPORT</span></div><h3>A little crypto works, too.</h3><p>Scan with Binance Pay, or use one of the receiving wallets below.</p><div id="binance-pay-container"></div><div id="crypto-pending" class="crypto-placeholder"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg><div><strong>Crypto support is on the way.</strong><span>Receiving details will appear here when added.</span></div></div></article></div><div id="onchain-panel" class="onchain-panel" aria-labelledby="wallets-heading" hidden><h3 id="wallets-heading" class="wallets-heading" hidden>On-chain wallets</h3><p id="network-note" class="network-note" hidden>Send only the asset on the network shown for each address.</p><div id="wallets-container"></div></div><p id="donation-status" class="donation-status" role="status" aria-live="polite" aria-atomic="true"></p><p class="support-footnote">Support is optional. Testing, feedback and contributions help just as much.</p></div></section>
-    <section class="faq-section wrap section" aria-labelledby="faq-title"><div><p class="eyebrow">A FEW GOOD QUESTIONS</p><h2 id="faq-title">Before you plug in.</h2></div><div class="faq-list"><details><summary>Is Nativol free and open source?</summary><p>Yes, it's free to use. Nativol's original app code is MIT licensed; the NTFS engine, health checker and patches retain their GPL licenses. macFUSE is installed separately. Explore the <a href="https://github.com/jimmychaula-max/Nativol">source on GitHub</a>.</p></details><details><summary>Will it work on every Mac or NTFS drive?</summary><p>This beta enables writing on native Intel macOS 15.7.9 with macFUSE 5.4.0, for eligible external single-partition NTFS drives over USB or Thunderbolt. The helper checks identity, supported geometry and filesystem health. Apple silicon and additional macOS versions are outside this release.</p></details><details><summary>What does automatic writing mean?</summary><p>After background setup, enable automatic writing once. Nativol will check eligible connected drives and attempt writable mounts. You can keep individual volumes read-only. Unsupported or unhealthy drives are refused; Nativol does not format, repair or force a busy unmount.</p></details><details><summary>Does Nativol upload my files?</summary><p>No. Drive operations stay on your Mac. This site has no analytics, external fonts or embedded payment widgets. The Binance Pay QR is an image stored with this site; scanning it opens Binance. Selecting Buy Me a Coffee opens that service's website. Those services handle donations under their own terms; this site does not process payments or receive payment confirmations.</p></details><details><summary>Do I need to donate to use the app?</summary><p>No. Donations are entirely optional and don't unlock features. Trying the beta on spare media, reporting a useful issue or contributing code are other ways to help.</p></details></div></section>
+
+    <section class="compatibility-section" id="compatibility" aria-labelledby="compatibility-title">
+      <div class="wrap compatibility-layout">
+        <div class="compatibility-intro"><p class="eyebrow"><span class="status-dot"></span> INTEL TESTING BETA</p><h2 id="compatibility-title">A small app.<br>A specific<br>setup.</h2><p>Built for a defined configuration. Broader Mac and drive support will follow separate testing.</p><a class="text-link" href="guide.html">Check the full requirements <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        <div class="compatibility-details">
+          <p class="spec-heading">RELEASE SPECIFICATION / 0.5.0-BETA.1</p>
+          <dl class="compatibility-table">
+            <div><dt>Architecture</dt><dd>Native Intel</dd></div>
+            <div><dt>Operating system</dt><dd>macOS 15.7.9</dd></div>
+            <div><dt>Filesystem</dt><dd>External, single-partition NTFS</dd></div>
+            <div><dt>Connection</dt><dd>USB or Thunderbolt</dd></div>
+            <div><dt>Required dependency</dt><dd>macFUSE 5.4.0<small>Installed separately</small></dd></div>
+            <div><dt>Apple silicon</dt><dd class="muted-light">Not supported in this release</dd></div>
+          </dl>
+          <div class="compatibility-notes"><p>Every writable mount starts with eligibility and health checks. Unsupported, dirty or hibernated volumes are refused.</p><p>This is a testing beta, ad-hoc signed and not notarized by Apple. Start with backed-up spare media.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="setup-section section wrap" id="setup" aria-labelledby="setup-title">
+      <div class="section-intro"><p class="eyebrow">GETTING STARTED</p><h2 id="setup-title">Three steps.<br>Then it’s just your drive.</h2><a class="text-link" href="guide.html">Follow the installation guide <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <ol class="steps">
+        <li><span class="row-number">01</span><div><h3>Prepare your Mac.</h3><p>Install Nativol and macFUSE 5.4.0. Approve background access and the required macOS permissions.</p></div></li>
+        <li><span class="row-number">02</span><div><h3>Enable automatic writing.</h3><p>Turn it on in Setup. Nativol checks each eligible connected NTFS drive before attempting a writable mount.</p></div></li>
+        <li><span class="row-number">03</span><div><h3>Copy. Finish. Eject.</h3><p>Work with files in Finder. When you're done, safely eject through Finder or the Nativol menu before unplugging.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="support-section" id="support" aria-labelledby="support-title">
+      <div class="wrap support-layout">
+        <div class="section-intro"><p class="eyebrow">INDEPENDENT &amp; OPEN SOURCE</p><h2 id="support-title">Free to use.<br>Open to improve.</h2></div>
+        <div class="support-copy"><p>Nativol is free to use. Help with the next release by testing, contributing code, or supporting development.</p><div class="actions support-actions"><a id="coffee-link" class="button" hidden target="_blank" rel="noopener noreferrer">Buy Me a Coffee <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a><a id="source-link" class="text-link" href="https://github.com/jimmychaula-max/Nativol">Explore the source <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a></div><p id="coffee-pending" class="pending-note">Coffee link coming soon.</p><p class="support-footnote">Donations are optional. All features stay free.</p></div>
+        <details class="crypto-disclosure"><summary><span>Prefer crypto?</span><span class="disclosure-hint">Binance Pay &amp; receiving wallets</span></summary><div class="crypto-content"><div id="binance-pay-container"></div><p id="crypto-pending" class="pending-note">Receiving details will appear here when added.</p><div id="onchain-panel" class="onchain-panel" aria-labelledby="wallets-heading" hidden><h3 id="wallets-heading" class="wallets-heading" hidden>On-chain wallets</h3><p id="network-note" class="network-note" hidden>Send only the asset on the network shown for each address.</p><div id="wallets-container"></div></div><p id="donation-status" class="donation-status" role="status" aria-live="polite" aria-atomic="true"></p></div></details>
+        <noscript><p class="noscript-note">Visit <a href="https://buymeacoffee.com/nativol">Buy Me a Coffee</a> to support Nativol. Crypto receiving details require JavaScript.</p></noscript>
+      </div>
+    </section>
+
+    <section class="faq-section section wrap" aria-labelledby="faq-title">
+      <div class="section-intro"><p class="eyebrow">BEFORE YOU PLUG IN</p><h2 id="faq-title">The details<br>worth knowing.</h2></div>
+      <div class="faq-list">
+        <details><summary>Will it work on my Mac and drive?</summary><p>This beta enables writing on native Intel macOS 15.7.9 with macFUSE 5.4.0, for eligible external single-partition NTFS drives over USB or Thunderbolt. The helper checks identity, supported geometry and filesystem health. Apple silicon and additional macOS versions are outside this release. See the <a href="guide.html">full requirements</a>.</p></details>
+        <details><summary>What happens when I connect a drive?</summary><p>After background setup, opt in to automatic writing. Nativol checks eligible connected drives and attempts writable mounts. You can keep individual volumes read-only. Unsupported or unhealthy drives are refused; Nativol does not format, repair or force a busy unmount.</p></details>
+        <details><summary>Is it really free and open source?</summary><p>Yes. Nativol's original app code is MIT licensed; the NTFS engine, health checker and patches retain their GPL licenses. macFUSE is installed separately. Donations are optional and do not unlock features. Read the <a href="https://github.com/jimmychaula-max/Nativol">source and licenses on GitHub</a>.</p></details>
+        <details><summary>Do my files stay on my Mac?</summary><p>Yes. Drive operations stay on your Mac. This site has no analytics, external fonts or embedded payment widgets. Donation links and QR codes take you to the relevant payment service; this site does not process payments or receive payment confirmations.</p></details>
+      </div>
+    </section>
+
+    <section class="download-section wrap" id="get-build" aria-labelledby="download-title"><div><p class="eyebrow">0.5.0-BETA.1 / INTEL / 3.9 MB</p><h2 id="download-title">Put NTFS to work.</h2></div><div class="download-actions"><a id="download-link" class="button" href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg">Download Intel beta <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a><a id="release-link" class="text-link" href="https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1">Release notes &amp; checksums <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a></div></section>
   </main>
-  <footer class="site-footer wrap"><div><a class="brand" href="index.html"><img src="assets/nativol.svg" width="30" height="30" alt="">Nativol</a><p>A familiar home for your NTFS drives.</p></div><div class="footer-links"><a href="guide.html">Install guide</a><a href="#compatibility">Compatibility</a><a href="#support">Support Nativol</a></div><div class="footer-bottom"><span>© 2026 Nativol contributors</span><span>Made with care. Shared with you.</span></div></footer>
+  <footer class="site-footer"><div class="wrap"><div class="footer-top"><span>NTFS FOR MAC. FREE &amp; OPEN SOURCE.</span><nav class="footer-links" aria-label="Footer navigation"><a href="guide.html">Install guide</a><a href="https://github.com/jimmychaula-max/Nativol/issues">Feedback</a><a href="#support">Support</a><a href="#main">Back to top ↑</a></nav></div><a class="footer-wordmark" href="/" aria-label="Nativol home">Nativol</a><div class="footer-bottom"><span>© 2026 Nativol contributors</span><span>Intel beta · Apple silicon on hold</span></div></div></footer>
 </body>
 </html>
