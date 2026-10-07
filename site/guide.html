@@ -3,16 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Download and install the Nativol Intel beta, approve background access, and set up automatic NTFS writing.">
+  <meta name="description" content="Install the Nativol Intel beta, macFUSE 5.4.0 and required macOS permissions. Set up automatic NTFS writing on macOS 15.7.9.">
   <meta name="theme-color" content="#f7f7f2">
-  <meta property="og:title" content="Install guide — Nativol">
-  <meta property="og:description" content="Download and install the Nativol Intel beta, approve background access, and set up automatic NTFS writing.">
+  <meta property="og:title" content="Install Nativol — NTFS for Intel Mac Beta Setup Guide">
+  <meta property="og:description" content="Install the Nativol Intel beta, macFUSE 5.4.0 and required macOS permissions. Set up automatic NTFS writing on macOS 15.7.9.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Nativol">
   <meta property="og:url" content="https://nativol.org/guide">
   <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Install Nativol — NTFS for Intel Mac Beta Setup Guide">
+  <meta name="twitter:description" content="Install the Nativol Intel beta, macFUSE 5.4.0 and required macOS permissions. Set up automatic NTFS writing on macOS 15.7.9.">
   <link rel="canonical" href="https://nativol.org/guide">
-  <title>Install guide — Nativol</title>
+  <title>Install Nativol — NTFS for Intel Mac Beta Setup Guide</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Nativol",
+        "item": "https://nativol.org/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Install guide",
+        "item": "https://nativol.org/guide"
+      }
+    ]
+  }
+  </script>
   <link rel="icon" href="assets/nativol.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20261007-refined-1">
   <link rel="stylesheet" href="refinements.css?v=20261007-1">
@@ -21,15 +43,15 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="wrap nav" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Nativol home"><img src="assets/nativol.svg" width="35" height="35" alt="">Nativol</a>
-      <div class="nav-links"><a href="index.html#compatibility">Compatibility</a><a href="guide.html" aria-current="page">Install guide</a></div>
+      <a class="brand" href="/" aria-label="Nativol home"><img src="assets/nativol.svg" width="35" height="35" alt="">Nativol</a>
+      <div class="nav-links"><a href="/#compatibility">Compatibility</a><a href="/guide" aria-current="page">Install guide</a></div>
     </nav>
   </header>
   <main id="main" class="wrap">
     <article class="article">
       <span class="eyebrow">0.5.0-beta.1 · Intel testing beta</span>
       <h1>Install Nativol.</h1>
-      <p class="lead">Download the DMG, drag Nativol to Applications, then complete the one-time setup.</p>
+      <p class="lead">Install Nativol for NTFS writing in Finder: download the Intel beta DMG, then complete the one-time setup.</p>
       <div class="actions"><a class="button" href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg">Download Intel beta DMG</a></div>
       <p><a href="https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1">Release notes</a> · <a href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg.sha256">SHA-256 checksum</a> · <a href="#source">Source &amp; licenses</a></p>
       <p class="notice">Writing currently requires a <strong>native Intel Mac on macOS 15.7.9 and macFUSE 5.4.0</strong>. This beta is ad-hoc signed and has not been notarized by Apple. Start with a spare drive and keep a separate verified backup. Apple Silicon work is paused.</p>
@@ -85,7 +107,7 @@
       <p>You do not need to download or build the source code to install Nativol. The optional <a href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Source.tar.gz">matching source archive</a> and <a href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Source.tar.gz.sha256">source checksum</a> are available for developers and reviewers.</p>
       <p>The app's original code is MIT licensed. The NTFS engine, health checker, and patches retain their applicable GPL licenses, with corresponding source included. macFUSE is installed separately under its own license. Browse the <a href="https://github.com/jimmychaula-max/Nativol">public repository</a> for notices and build instructions.</p>
       <p>Broader hardware and lifecycle testing, a focused privilege-boundary review, and release signing/notarization remain before a production-readiness claim. Additional macOS versions and Apple Silicon require separate validation.</p>
-      <div class="actions"><a class="button" href="index.html">Back to Nativol</a></div>
+      <div class="actions"><a class="button" href="/">Back to Nativol</a></div>
     </article>
   </main>
   <footer class="wrap footer"><span>© 2026 Nativol contributors</span><span>Intel beta · Apple silicon on hold</span></footer>
