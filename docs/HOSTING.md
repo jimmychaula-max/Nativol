@@ -1,12 +1,12 @@
 # Website and download hosting
 
-Nativol uses **Cloudflare Pages for the static website at [nativol.org](https://nativol.org)** and **GitHub Releases for the Intel beta DMG, checksums, and matching source archive**. The domain is registered with Cloudflare. The [0.5.0-beta.1 release](https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1) and public source repository are available. Site deployment and DNS activation remain to be verified before announcing the website as live.
+Nativol uses **Cloudflare Pages for the static website at [nativol.org](https://nativol.org)** and **GitHub Releases for the Intel beta DMG, checksums, and matching source archive**. The domain is registered with Cloudflare. The [0.5.0-beta.1 release](https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1) and public source repository are available. The custom domain is active with SSL enabled, and the live HTTPS site was verified on 7 October 2026.
 
 The website is the small static `site/` directory. It needs no paid runtime, database, application server, or build framework. Apple Developer ID signing and notarization are separate from website hosting.
 
 ## Cloudflare Pages settings
 
-The Git integration plan connects the public Nativol repository with these settings:
+The `nativol` Pages project uses Git integration with the public Nativol repository. Automatic production deployments are enabled from `main`:
 
 | Setting | Value |
 |---|---|
@@ -16,11 +16,13 @@ The Git integration plan connects the public Nativol repository with these setti
 | Build command | `exit 0` |
 | Build output directory | `site` |
 
-Cloudflare deploys a `*.pages.dev` address for the project. Add **`nativol.org` through the project's Custom domains screen** before modifying DNS. Because the domain is on Cloudflare, Pages can configure the required DNS record in that account. Wait for the domain and HTTPS certificate to become active. Do not replace unrelated DNS records.
+The project is available at [nativol.pages.dev](https://nativol.pages.dev), with **[nativol.org](https://nativol.org)** configured as its active custom domain. For any additional domain, add it through the project's Custom domains screen before modifying DNS and wait for its certificate to become active. Do not replace unrelated DNS records.
+
+An active Cloudflare Single Redirect sends `www.nativol.org` to `https://nativol.org` with HTTP 301, preserving the path and query string. On 7 October 2026, `https://www.nativol.org/guide?source=redirect-check` was verified to land on the live guide at `https://nativol.org/guide?source=redirect-check`.
 
 Official references, checked 7 October 2026: [static HTML deployment](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/) and [custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/).
 
-For Direct Upload, deploy the contents of `site/`, with `index.html` at the deployment root. The Cloudflare-specific upload ZIP contains this layout; the older general website ZIP also includes documentation and must not be uploaded unchanged. Direct Upload projects cannot later switch to Git integration; use a new project or continue manual/CLI deployments. See [Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/).
+Direct Upload is an alternative for a separate project, not the mode used here. Deploy the contents of `site/`, with `index.html` at the deployment root. The Cloudflare-specific upload ZIP contains this layout; the older general website ZIP also includes documentation and must not be uploaded unchanged. Direct Upload projects cannot later switch to Git integration; use a new project or continue manual/CLI deployments. See [Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/).
 
 The site declares `https://nativol.org/` as its canonical homepage. Cloudflare Pages redirects `.html` pages to extensionless paths, so the guide's canonical URL is `https://nativol.org/guide`. `robots.txt` points to the two-page sitemap. The `_headers` file permits local scripts, styles and images, disallows embedding and form submission, and disables camera, microphone, location and browser payment access. See [serving Pages](https://developers.cloudflare.com/pages/configuration/serving-pages/).
 
@@ -28,9 +30,13 @@ The site declares `https://nativol.org/` as its canonical homepage. Cloudflare P
 
 Keep source in the [Nativol repository](https://github.com/jimmychaula-max/Nativol) and downloads in a beta GitHub Release, including the DMG, SHA-256 checksum, and matching source archive. Keep the original third-party license notices and corresponding source. Do not put release binaries in the site's deployment directory.
 
-Set `releaseURL` and `sourceURL` in `site/config.js` only after the repository and release URLs have been verified. Configure optional donations as described in [DONATIONS.md](DONATIONS.md). Until configured, release/source buttons lead to the local test guide. `site/config.example.json` is an optional deployment record; the website reads `config.js`.
+The verified repository and beta release URLs are configured as `sourceURL` and `releaseURL` in `site/config.js`. Configure optional donations as described in [DONATIONS.md](DONATIONS.md). The Binance Pay receiving QR is public; Buy Me a Coffee remains inactive pending payout setup. `site/config.example.json` is an optional deployment record; the website reads `config.js`.
 
 The existing `.github/workflows/pages.yml` is an optional GitHub Pages alternative. It has no push trigger and does not configure Cloudflare. Leave it unused when Cloudflare Pages is the website host.
+
+## Verification and ongoing updates
+
+The initial live deployment loaded over HTTPS with working JavaScript. The [GitHub source-check run](https://github.com/jimmychaula-max/Nativol/actions/runs/37619896956) passed, and remote release asset digests matched the reviewed immutable archives. These checks do not broaden the app's hardware validation or establish production readiness.
 
 ## Local preview and publication checks
 

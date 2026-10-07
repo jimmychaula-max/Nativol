@@ -44,7 +44,7 @@ The output is `dist/Nativol.app`. Read [BUILDING](docs/BUILDING.md) for exact de
 
 The [0.5.0-beta.1 Intel beta release](https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1) includes the testing DMG, SHA-256 checksums, and matching source archive. A local ad-hoc signature is not Apple notarization or publisher authentication. Do not describe this beta as production ready. The [release checklist](docs/RELEASE-CHECKLIST.md) tracks the remaining gates.
 
-The static site is in `site/`, prepared for **[nativol.org](https://nativol.org)** on Cloudflare Pages. The [Nativol GitHub repository](https://github.com/jimmychaula-max/Nativol) hosts the app source and release downloads. See the [hosting guide](docs/HOSTING.md) for deployment settings and verification; registering a domain does not itself deploy the site.
+The static site is in `site/` and live at **[nativol.org](https://nativol.org)** on Cloudflare Pages. The [Nativol GitHub repository](https://github.com/jimmychaula-max/Nativol) hosts the app source and release downloads. Cloudflare automatically deploys the `main` branch. See the [hosting guide](docs/HOSTING.md) for deployment settings and verification.
 
 ## Contributing and licensing
 

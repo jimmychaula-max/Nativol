@@ -6,7 +6,7 @@ The website has no payment form, wallet connection, tracking script, or remote Q
 
 ## Configure the links
 
-Edit `site/config.js`. It runs before `site/site.js` and works on a static host such as GitHub Pages. Settings are empty until the maintainer supplies real details; the page shows “coming soon” text instead of fake destinations.
+Edit `site/config.js`. It runs before `site/site.js` on the live [nativol.org](https://nativol.org) Cloudflare Pages site. The published site includes the Binance Pay receiving QR and ID. Buy Me a Coffee remains inactive pending payout setup, and on-chain wallet addresses are unconfigured. Unconfigured options show “coming soon” text instead of fake destinations.
 
 | Setting | Value to provide |
 | --- | --- |
@@ -19,7 +19,7 @@ Edit `site/config.js`. It runs before `site/site.js` and works on a static host 
 
 ## Binance Pay
 
-The local preview contains receiving details observed in the signed-in Binance account on 7 October 2026:
+The published website contains receiving details observed in the signed-in Binance account on 7 October 2026:
 
 | Field | Configured value |
 | --- | --- |
@@ -31,7 +31,11 @@ Apple Vision decoded the captured image as `https://app.binance.com/uni-qr/5nGMj
 
 The on-page instruction asks supporters to scan in Binance Pay and confirm **Jimnicklaus** before sending. The ID copy button reports clipboard errors and offers manual selection instead of reporting a false success. Account IDs are kept separate from `wallets`; never enter a Binance ID as an on-chain receiving address.
 
-This is a local preview, not a published donation integration. An independent scan in a sender's Binance app still needs to confirm the recipient; no test payment or donation-policy approval has been verified. Do not substitute an expiring payment request for this Receive QR. If the receiving details change, recapture the QR, confirm its payload and recipient, then replace the local image and configuration together.
+The receiving QR and Binance ID are published. An independent scan in a sender's Binance app still needs to confirm the recipient; no test payment, successful donation, or donation-policy approval has been verified. Do not substitute an expiring payment request for this Receive QR. If the receiving details change, recapture the QR, confirm its payload and recipient, then replace the local image and configuration together.
+
+## Buy Me a Coffee
+
+The [Nativol profile](https://buymeacoffee.com/nativol) is live. Its website link was updated to `https://nativol.org` on 7 October 2026. The service still requires the owner to set up a payout method before receiving support. Keep `buyMeACoffeeURL` empty until that setup is complete and the public support flow has been checked.
 
 ## On-chain wallets
 
@@ -47,7 +51,7 @@ Each wallet object requires all five fields:
 
 Do not put private keys, recovery phrases, API tokens, or account credentials in this file. Everything in the website folder is public. This simple address-only interface is unsuitable for destinations requiring an additional memo or destination tag; leave those unconfigured until the interface supports them explicitly.
 
-## Check before publishing
+## Check before changing donation details
 
 1. Copy receiving details from your own wallet and confirm the asset and network independently. The website performs format bounds only; it does not verify ownership, address checksum, or network compatibility.
 2. Keep network names explicit, especially where the same address format appears on different blockchains.
@@ -56,4 +60,4 @@ Do not put private keys, recovery phrases, API tokens, or account credentials in
 5. Scan the Binance Pay QR in a sender's Binance app and verify the recipient. Check that **Copy Binance ID** produces the exact configured ID. This check need not send a payment.
 6. Run `node scripts/test-site.js`. Hosting over HTTPS enables clipboard support in compatible browsers. If clipboard access is denied or unavailable, the page selects the full visible address or ID where possible and gives manual-copy instructions; it never reports a failed copy as successful.
 
-The donation section remains present when unconfigured, but no payment or receiving address is fabricated. Publication is a separate step from preparing these files.
+The donation section remains present when an option is unconfigured, but no payment or receiving address is fabricated. Verify future changes locally before publishing them through the connected Git repository.
