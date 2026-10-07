@@ -78,6 +78,7 @@
     var config = value && typeof value === "object" ? value : {};
     return Object.freeze({
       version: plainText(config.version, 40),
+      downloadURL: safeHTTPSURL(config.downloadURL),
       releaseURL: safeHTTPSURL(config.releaseURL),
       sourceURL: safeHTTPSURL(config.sourceURL),
       buyMeACoffeeURL: validateCoffeeURL(config.buyMeACoffeeURL),
@@ -260,10 +261,11 @@
 
   function init(doc, rawConfig) {
     var config = validateConfig(rawConfig);
+    configureLink(doc, "nav-download-link", config.downloadURL);
+    configureLink(doc, "hero-download-link", config.downloadURL);
+    configureLink(doc, "download-link", config.downloadURL);
     configureLink(doc, "release-link", config.releaseURL);
     configureLink(doc, "source-link", config.sourceURL);
-    var releaseNote = doc.getElementById("release-note");
-    if (releaseNote && config.releaseURL) releaseNote.textContent = "Get the beta, checksum and matching source from the release page.";
     initDonations(doc, config);
     initDemoMenu(doc);
   }

@@ -1,2 +1,92 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Set up and test the Nativol Intel beta with backed-up spare NTFS media."><meta name="theme-color" content="#f7f8f5"><meta property="og:title" content="Test guide — Nativol"><meta property="og:description" content="Set up and test the Nativol Intel beta with backed-up spare NTFS media."><meta property="og:type" content="website"><meta property="og:site_name" content="Nativol"><meta property="og:url" content="https://nativol.org/guide"><meta name="twitter:card" content="summary"><link rel="canonical" href="https://nativol.org/guide"><title>Test guide — Nativol</title><link rel="icon" href="assets/nativol.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="index.html" aria-label="Nativol home"><img src="assets/nativol.svg" width="35" height="35" alt="">Nativol</a><div class="nav-links"><a href="index.html#compatibility">Compatibility</a><a href="guide.html" aria-current="page">Test guide</a></div></nav></header><main id="main" class="wrap"><article class="article"><span class="eyebrow">0.5.0-beta.1 · Intel testing beta</span><h1>A good first test.</h1><p class="lead">Set up once, then try a small transfer on a backed-up spare NTFS drive.</p><p class="notice">This is a testing release, not a production-certified driver. Keep a separate verified backup. Apple Silicon work is paused.</p><h2>Check your setup</h2><ul><li>A <strong>native Intel Mac on macOS 15.7.9</strong>.</li><li>Official <strong>macFUSE 5.4.0</strong>, installed separately with the necessary system approvals.</li><li>External physical NTFS over USB or Thunderbolt, with a verified single-partition layout and supported 512/4096-byte geometry.</li><li>A clean volume that passes Nativol's read-only preflight.</li></ul><p>Writing is refused outside this scope or when identity, topology, health, or ownership cannot be established. Other filesystems remain managed by macOS. Up to eight Nativol-managed volumes are supported by the beta policy.</p><h2 id="installation">Install and approve background access</h2><ol><li>Download the DMG, its SHA-256 checksum, and matching source from the <a href="https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1">0.5.0-beta.1 GitHub Release</a>. Compare the checksum before opening it.</li><li>Install official macFUSE 5.4.0 from <a href="https://macfuse.github.io/">macFUSE's website</a> and follow its instructions. Nativol does not bundle or install it.</li><li>Copy Nativol to Applications and launch it. The beta is ad-hoc signed, not Developer ID signed or notarized. Use only macOS's normal approval flow for a build whose source and checksum you trust; don't disable Gatekeeper.</li><li>In Setup, install background access and approve the administrator prompt. If asked, enable the displayed NativolService in Privacy &amp; Security → Full Disk Access.</li><li>Enable automatic writing after reviewing the scope. It applies globally to eligible attachments without per-drive enrollment. Enable launch at login if desired.</li></ol><p>Administrator approval is for protected setup and updates. Ordinary operations use the service without saving your password. Launch at login runs after you sign in.</p><h2>Make the first transfer</h2><ol><li>Connect a backed-up spare NTFS drive. Confirm Nativol reports writable access.</li><li>Copy a small folder of synthetic files. Open them, copy them back, and compare checksums where possible.</li><li>Eject using Finder. Reconnect, then repeat with Nativol's safe eject action.</li><li>Restart, sign in, and check that the menu-bar app returns. Reconnect and confirm writing is enabled without a password.</li><li>If Windows is available, read back the files there after a clean eject. File-content checks do not replace a filesystem integrity check.</li></ol><p>Stop if copying, ejection, or identity checks fail. Leave the drive connected while safe eject is pending. Nativol does not format or repair a volume, force a busy unmount, or override a dirty or hibernated state.</p><h2>Share useful results</h2><p>Share non-sensitive test results in <a href="https://github.com/jimmychaula-max/Nativol/issues">GitHub Issues</a>, including your app version, Intel Mac model family, macOS and macFUSE versions, connection type, approximate drive capacity, and which test steps passed. Include the exact error text with personal details removed.</p><p>Do not share full disk images, raw system logs, volume serials, home paths, personal filenames, or credentials. Report suspected privilege or integrity flaws through <a href="https://github.com/jimmychaula-max/Nativol/security/advisories/new">GitHub private vulnerability reporting</a>.</p><h2 id="source">Source &amp; licenses</h2><p>The <a href="https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1">0.5.0-beta.1 release</a> includes a matching source archive alongside the DMG. The app's original code is MIT licensed. The NTFS engine, health checker and patches retain their applicable GPL licenses; the archive includes their corresponding source. macFUSE is installed separately under its own license. Browse the <a href="https://github.com/jimmychaula-max/Nativol">public repository</a> for source, notices and build instructions.</p><h2>What comes next</h2><p>Independent hardware tests, broader file and lifecycle coverage, a focused privilege-boundary review, and release signing/notarization are needed before a production-readiness claim. Additional macOS versions and Apple Silicon require separate validation.</p><div class="actions"><a class="button" href="index.html">Back to Nativol</a></div></article></main><footer class="wrap footer"><span>© 2026 Nativol contributors</span><span>Local app. Clear compatibility boundaries.</span></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Download and install the Nativol Intel beta, approve background access, and set up automatic NTFS writing.">
+  <meta name="theme-color" content="#f7f8f5">
+  <meta property="og:title" content="Install guide — Nativol">
+  <meta property="og:description" content="Download and install the Nativol Intel beta, approve background access, and set up automatic NTFS writing.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nativol">
+  <meta property="og:url" content="https://nativol.org/guide">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://nativol.org/guide">
+  <title>Install guide — Nativol</title>
+  <link rel="icon" href="assets/nativol.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Nativol home"><img src="assets/nativol.svg" width="35" height="35" alt="">Nativol</a>
+      <div class="nav-links"><a href="index.html#compatibility">Compatibility</a><a href="guide.html" aria-current="page">Install guide</a></div>
+    </nav>
+  </header>
+  <main id="main" class="wrap">
+    <article class="article">
+      <span class="eyebrow">0.5.0-beta.1 · Intel testing beta</span>
+      <h1>Install Nativol.</h1>
+      <p class="lead">Download the DMG, drag Nativol to Applications, then complete the one-time setup.</p>
+      <div class="actions"><a class="button" href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg">Download Intel beta DMG</a></div>
+      <p><a href="https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1">Release notes</a> · <a href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg.sha256">SHA-256 checksum</a> · <a href="#source">Source &amp; licenses</a></p>
+      <p class="notice">Writing currently requires a <strong>native Intel Mac on macOS 15.7.9 and macFUSE 5.4.0</strong>. This beta is ad-hoc signed and has not been notarized by Apple. Start with a spare drive and keep a separate verified backup. Apple Silicon work is paused.</p>
+
+      <h2 id="installation">1. Download and install</h2>
+      <ol>
+        <li>Click <strong>Download Intel beta DMG</strong> above. Your browser downloads the installer disk image from GitHub; you may be asked where to save it.</li>
+        <li>Compare the downloaded file with the linked SHA-256 checksum before opening it.</li>
+        <li>Open <strong>Nativol-0.5.0-beta.1-Intel-Beta.dmg</strong>, usually in Downloads. Drag <strong>Nativol</strong> onto the <strong>Applications</strong> shortcut inside the disk image.</li>
+        <li>Open <strong>Nativol</strong> from your Applications folder.</li>
+      </ol>
+      <p>If macOS blocks the app because its developer cannot be verified, review <a href="https://support.apple.com/en-us/102445">Apple's instructions for opening an app you trust</a>. After attempting to open it, the normal approval is in <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>. Review the app name and confirm only if you trust this download. Keep Gatekeeper enabled.</p>
+
+      <h2>2. Install macFUSE 5.4.0</h2>
+      <p>If this version is not already installed, get the official <a href="https://github.com/macfuse/macfuse/releases/tag/macfuse-5.4.0">macFUSE 5.4.0 release</a>. Open its disk image and run the macFUSE installer. Follow <a href="https://github.com/macfuse/macfuse/wiki/Getting-Started">macFUSE's installation instructions</a>, including the macOS extension approval and restart when requested. Return to Nativol afterward.</p>
+      <p>Nativol does not bundle or install macFUSE. This beta checks for version 5.4.0; another version is outside its supported writing configuration.</p>
+
+      <h2>3. Set up background access</h2>
+      <ol>
+        <li>In Nativol, select <strong>Setup</strong>, then <strong>Set Up Background Access…</strong>. Approve the macOS administrator prompt. Nativol reopens when setup finishes.</li>
+        <li>In Setup, click <strong>Show NativolService</strong> to reveal the installed service, then <strong>Open Full Disk Access</strong>.</li>
+        <li>In <strong>System Settings → Privacy &amp; Security → Full Disk Access</strong>, use <strong>+</strong> to add the revealed <strong>NativolService</strong>, and switch it on. Approve macOS authentication if requested.</li>
+        <li>Return to Nativol and check the status in Setup. If background access was already installed, the setup button is labelled <strong>Repair Background Access…</strong>.</li>
+      </ol>
+      <p>Administrator approval is for protected setup and updates. Ordinary drive operations use the background service without storing your password.</p>
+
+      <h2>4. Turn on automatic writing</h2>
+      <ol>
+        <li>In Setup, enable <strong>Automatically enable writing for external NTFS drives</strong> after reviewing the supported drive scope below.</li>
+        <li>Enable <strong>Start in the menu bar when I sign in</strong> if you want Nativol to start after sign-in. If macOS asks, allow Nativol in <strong>System Settings → General → Login Items</strong>.</li>
+        <li>Close the Nativol window to leave it running in the menu bar. Connect a backed-up spare NTFS drive and confirm Nativol reports writable access.</li>
+      </ol>
+      <p>Automatic writing is off until you enable it. Once enabled, it applies to all eligible connected NTFS drives without per-drive enrollment. If a previous attempt failed before permissions were ready, use <strong>Enable Writing</strong> to retry, or safely eject and reconnect.</p>
+
+      <h2>Supported drives</h2>
+      <p>This beta accepts external physical NTFS drives over USB or Thunderbolt with a verified single-partition layout, supported 512/4096-byte geometry, and a successful read-only health check. Up to eight Nativol-managed volumes are supported.</p>
+      <p>Writing is refused when compatibility, identity, topology, health, or ownership cannot be established. Other filesystems remain managed by macOS. Nativol does not format or repair drives, force a busy unmount, or override a dirty or hibernated state.</p>
+
+      <h2>Try your first transfer</h2>
+      <ol>
+        <li>Copy a small folder of test files to the spare drive. Open them, copy them back, and compare their contents or checksums.</li>
+        <li>Eject using Finder and wait for completion before unplugging. Reconnect, then repeat with Nativol's safe eject action.</li>
+        <li>Restart and sign in. Check that the menu-bar app returns and reconnect the drive to confirm automatic writing.</li>
+        <li>If Windows is available, read back the files there after a clean eject. File-content checks do not replace a filesystem integrity check.</li>
+      </ol>
+      <p>Stop if copying, ejection, or identity checks fail. Leave the drive connected while safe eject is pending.</p>
+
+      <h2>Get help or report results</h2>
+      <p>Use <a href="https://github.com/jimmychaula-max/Nativol/issues">GitHub Issues</a> for installation help and non-sensitive test results. Include the app version, Intel Mac model family, macOS and macFUSE versions, connection type, approximate drive capacity, and exact error text with personal details removed.</p>
+      <p>Do not post full disk images, raw system logs, volume serials, home paths, personal filenames, or credentials. Report suspected privilege or integrity flaws through <a href="https://github.com/jimmychaula-max/Nativol/security/advisories/new">GitHub private vulnerability reporting</a>.</p>
+
+      <h2 id="source">Source &amp; licenses</h2>
+      <p>You do not need to download or build the source code to install Nativol. The optional <a href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Source.tar.gz">matching source archive</a> and <a href="https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Source.tar.gz.sha256">source checksum</a> are available for developers and reviewers.</p>
+      <p>The app's original code is MIT licensed. The NTFS engine, health checker, and patches retain their applicable GPL licenses, with corresponding source included. macFUSE is installed separately under its own license. Browse the <a href="https://github.com/jimmychaula-max/Nativol">public repository</a> for notices and build instructions.</p>
+      <p>Broader hardware and lifecycle testing, a focused privilege-boundary review, and release signing/notarization remain before a production-readiness claim. Additional macOS versions and Apple Silicon require separate validation.</p>
+      <div class="actions"><a class="button" href="index.html">Back to Nativol</a></div>
+    </article>
+  </main>
+  <footer class="wrap footer"><span>© 2026 Nativol contributors</span><span>Local app. Clear compatibility boundaries.</span></footer>
+</body>
+</html>

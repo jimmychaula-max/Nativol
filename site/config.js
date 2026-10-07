@@ -4,6 +4,7 @@
  */
 window.NATIVOL_SITE = Object.freeze({
   version: "0.5.0-beta.1",
+  downloadURL: "https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg",
   releaseURL: "https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1",
   sourceURL: "https://github.com/jimmychaula-max/Nativol",
   buyMeACoffeeURL: "",

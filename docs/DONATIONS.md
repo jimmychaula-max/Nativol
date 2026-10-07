@@ -13,7 +13,8 @@ Edit `site/config.js`. It runs before `site/site.js` on the live [nativol.org](h
 | `buyMeACoffeeURL` | Your complete HTTPS profile URL on `buymeacoffee.com` or `www.buymeacoffee.com`, without query parameters. |
 | `binancePay` | A verified receiving configuration using the fields below; `null` hides this option. |
 | `wallets` | An array of wallet objects using the fields below. Leave it empty to hide wallet cards. |
-| `releaseURL` | The published HTTPS beta release page. Empty keeps the setup-guide link. |
+| `downloadURL` | The published HTTPS DMG asset URL. Main download buttons use this URL. |
+| `releaseURL` | The published HTTPS beta release page, with checksums and matching source. |
 | `sourceURL` | The published HTTPS source repository. Empty keeps the page's existing information link. |
 | `version` | The release version represented by the page. Update the visible HTML release copy when it changes. |
 
