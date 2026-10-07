@@ -6,7 +6,7 @@ The website has no payment form, wallet connection, tracking script, or remote Q
 
 ## Configure the links
 
-Edit `site/config.js`. It runs before `site/site.js` on the live [nativol.org](https://nativol.org) Cloudflare Pages site. The site includes the Binance Pay receiving QR and ID, plus the four asset/network options below. Buy Me a Coffee remains inactive pending payout setup. Unconfigured options show “coming soon” text instead of fake destinations.
+Edit `site/config.js`. It runs before `site/site.js` on the live [nativol.org](https://nativol.org) Cloudflare Pages site. The site links to the maintainer's Buy Me a Coffee profile and includes the Binance Pay receiving QR and ID, plus the four asset/network options below. Unconfigured options show “coming soon” text instead of fake destinations.
 
 | Setting | Value to provide |
 | --- | --- |
@@ -36,7 +36,7 @@ The receiving QR and Binance ID are published. An independent scan in a sender's
 
 ## Buy Me a Coffee
 
-The [Nativol profile](https://buymeacoffee.com/nativol) is live. Its website link was updated to `https://nativol.org` on 7 October 2026. The service still requires the owner to set up a payout method before receiving support. Keep `buyMeACoffeeURL` empty until that setup is complete and the public support flow has been checked.
+The [Nativol profile](https://buymeacoffee.com/nativol) is live and linked from the website at the maintainer's request. Its website link was updated to `https://nativol.org` on 7 October 2026. The last account check showed payout setup pending; enabling the profile link does not establish that payouts or a donation transaction have been verified. The profile opens on Buy Me a Coffee, which handles its own support flow.
 
 ## On-chain wallets
 

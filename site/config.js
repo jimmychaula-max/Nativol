@@ -7,7 +7,7 @@ window.NATIVOL_SITE = Object.freeze({
   downloadURL: "https://github.com/jimmychaula-max/Nativol/releases/download/v0.5.0-beta.1/Nativol-0.5.0-beta.1-Intel-Beta.dmg",
   releaseURL: "https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1",
   sourceURL: "https://github.com/jimmychaula-max/Nativol",
-  buyMeACoffeeURL: "",
+  buyMeACoffeeURL: "https://buymeacoffee.com/nativol",
   binancePay: Object.freeze({
     recipient: "Jimnicklaus",
     binanceID: "74331910",
