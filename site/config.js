@@ -13,5 +13,34 @@ window.NATIVOL_SITE = Object.freeze({
     binanceID: "74331910",
     qrImage: "assets/binance-pay-receive.jpg"
   }),
-  wallets: Object.freeze([])
+  wallets: Object.freeze([
+    Object.freeze({
+      id: "btc-bitcoin",
+      label: "Bitcoin",
+      asset: "BTC",
+      network: "Bitcoin (BTC)",
+      address: "12YC52dDN8bZn8TD2Cui4dCW9SvMHTYaZT"
+    }),
+    Object.freeze({
+      id: "usdt-bnb-smart-chain",
+      label: "USDT on BNB Smart Chain",
+      asset: "USDT",
+      network: "BNB Smart Chain (BEP20)",
+      address: "0xcbc2d9c7a95c86b5bc0822810ec5cc9b38e8aa62"
+    }),
+    Object.freeze({
+      id: "usdt-tron",
+      label: "USDT on Tron",
+      asset: "USDT",
+      network: "Tron (TRC20)",
+      address: "TGUd3GoYUbGxwuAwFLEHJcTMUatsEKnUBg"
+    }),
+    Object.freeze({
+      id: "usdt-ethereum",
+      label: "USDT on Ethereum",
+      asset: "USDT",
+      network: "Ethereum (ERC20)",
+      address: "0xcbc2d9c7a95c86b5bc0822810ec5cc9b38e8aa62"
+    })
+  ])
 });

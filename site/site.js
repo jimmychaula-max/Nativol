@@ -227,6 +227,8 @@
       config.wallets.forEach(function (wallet) { container.appendChild(walletCard(doc, wallet, status)); });
     }
     var hasWallets = !!(container && config.wallets.length);
+    var onchainPanel = doc.getElementById("onchain-panel");
+    if (onchainPanel) onchainPanel.hidden = !hasWallets;
     var networkNote = doc.getElementById("network-note");
     if (networkNote) networkNote.hidden = !hasWallets;
     var walletHeading = doc.getElementById("wallets-heading");

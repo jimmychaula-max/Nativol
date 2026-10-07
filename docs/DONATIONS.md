@@ -6,7 +6,7 @@ The website has no payment form, wallet connection, tracking script, or remote Q
 
 ## Configure the links
 
-Edit `site/config.js`. It runs before `site/site.js` on the live [nativol.org](https://nativol.org) Cloudflare Pages site. The published site includes the Binance Pay receiving QR and ID. Buy Me a Coffee remains inactive pending payout setup, and on-chain wallet addresses are unconfigured. Unconfigured options show “coming soon” text instead of fake destinations.
+Edit `site/config.js`. It runs before `site/site.js` on the live [nativol.org](https://nativol.org) Cloudflare Pages site. The site includes the Binance Pay receiving QR and ID, plus the four asset/network options below. Buy Me a Coffee remains inactive pending payout setup. Unconfigured options show “coming soon” text instead of fake destinations.
 
 | Setting | Value to provide |
 | --- | --- |
@@ -39,6 +39,17 @@ The receiving QR and Binance ID are published. An independent scan in a sender's
 The [Nativol profile](https://buymeacoffee.com/nativol) is live. Its website link was updated to `https://nativol.org` on 7 October 2026. The service still requires the owner to set up a payout method before receiving support. Keep `buyMeACoffeeURL` empty until that setup is complete and the public support flow has been checked.
 
 ## On-chain wallets
+
+The maintainer supplied these public receiving addresses and Binance deposit screenshots on 7 October 2026. Asset/network labels follow those screenshots. The BNB Smart Chain and Ethereum entries intentionally use the same address but remain separate choices; the asset is **USDT** on both networks.
+
+| Asset | Network | Receiving address |
+| --- | --- | --- |
+| BTC | Bitcoin (BTC) | `12YC52dDN8bZn8TD2Cui4dCW9SvMHTYaZT` |
+| USDT | BNB Smart Chain (BEP20) | `0xcbc2d9c7a95c86b5bc0822810ec5cc9b38e8aa62` |
+| USDT | Tron (TRC20) | `TGUd3GoYUbGxwuAwFLEHJcTMUatsEKnUBg` |
+| USDT | Ethereum (ERC20) | `0xcbc2d9c7a95c86b5bc0822810ec5cc9b38e8aa62` |
+
+These are receiving details supplied by the maintainer; no test transfer or successful deposit has been verified. The site displays and copies addresses without connecting a wallet or preparing a transaction.
 
 Each wallet object requires all five fields:
 
