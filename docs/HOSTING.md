@@ -1,17 +1,17 @@
 # Website and download hosting
 
-Nativol uses **Cloudflare Pages for the static website at [nativol.org](https://nativol.org)** and **GitHub Releases for the Intel beta DMG, checksums, and matching source archive**. The domain is registered with Cloudflare. Site deployment, DNS activation, and release availability must each be verified before announcing them as live.
+Nativol uses **Cloudflare Pages for the static website at [nativol.org](https://nativol.org)** and **GitHub Releases for the Intel beta DMG, checksums, and matching source archive**. The domain is registered with Cloudflare. The [0.5.0-beta.1 release](https://github.com/jimmychaula-max/Nativol/releases/tag/v0.5.0-beta.1) and public source repository are available. Site deployment and DNS activation remain to be verified before announcing the website as live.
 
 The website is the small static `site/` directory. It needs no paid runtime, database, application server, or build framework. Apple Developer ID signing and notarization are separate from website hosting.
 
 ## Cloudflare Pages settings
 
-For Git integration, connect the public Nativol repository and use:
+The Git integration plan connects the public Nativol repository with these settings:
 
 | Setting | Value |
 |---|---|
 | Framework preset | None |
-| Production branch | The repository's actual production branch |
+| Production branch | `main` |
 | Root directory | Repository root |
 | Build command | `exit 0` |
 | Build output directory | `site` |
