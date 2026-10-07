@@ -1,0 +1,87 @@
+--- a/src/ntfs-3g_common.c
++++ b/src/ntfs-3g_common.c
+@@ -46,6 +46,8 @@
+ 
+ #include <getopt.h>
+ #include <fuse.h>
++#include <sys/stat.h>
++#include <unistd.h>
+ 
+ #include "compat.h"
+ #include "inode.h"
+@@ -678,6 +680,22 @@
+ 				
+ 				/* Canonicalize device name (mtab, etc) */
+ 				popts->arg_device = optarg;
++#if defined(__APPLE__)
++				/* Darwin realpath can rewrite /dev/fd/3 to the
++				 * underlying vnode basename. Preserve the one explicit
++				 * inherited-descriptor interface used by Nativol. */
++				if (!strcmp(optarg, "/dev/fd/3")) {
++					struct stat inherited;
++					if (fstat(3, &inherited)
++					    || (!S_ISREG(inherited.st_mode)
++						&& !S_ISBLK(inherited.st_mode))) {
++						free(popts->device);
++						popts->device = NULL;
++						return -1;
++					}
++					strcpy(popts->device, "/dev/fd/3");
++				} else
++#endif
+ 				if (!ntfs_realpath_canonicalize(optarg,
+ 						popts->device)) {
+ 					ntfs_log_perror("%s: Failed to access "
+--- a/libntfs-3g/unix_io.c
++++ b/libntfs-3g/unix_io.c
+@@ -119,11 +119,36 @@
+ 	struct flock flk;
+ 	struct stat sbuf;
+ 	int err;
++#if defined(__APPLE__)
++	int inherited = !strcmp(dev->d_name, "/dev/fd/3");
++#endif
+ 
+ 	if (NDevOpen(dev)) {
+ 		errno = EBUSY;
+ 		return -1;
+ 	}
++#if defined(__APPLE__)
++	/* Use the helper's already-open capability, not fdesc pathname open:
++	 * Darwin can recheck device permissions after the helper drops uid. */
++	if (inherited) {
++		int held_flags, held_access, requested_access = flags & O_ACCMODE;
++		if (fstat(3, &sbuf))
++			return -1;
++		held_flags = fcntl(3, F_GETFL);
++		if (held_flags == -1)
++			return -1;
++		held_access = held_flags & O_ACCMODE;
++		if ((!S_ISREG(sbuf.st_mode) && !S_ISBLK(sbuf.st_mode))
++		    || (requested_access != O_RDONLY && requested_access != O_RDWR)
++		    || (held_access != O_RDONLY && held_access != O_RDWR)
++		    || (requested_access == O_RDWR && held_access != O_RDWR)
++		    || (held_flags & O_APPEND)
++		    || (flags & ~(O_ACCMODE | O_EXCL))) {
++			errno = EINVAL;
++			return -1;
++		}
++	} else
++#endif
+ 	if (stat(dev->d_name, &sbuf)) {
+ 		ntfs_log_perror("Failed to access '%s'", dev->d_name);
+ 		return -1;
+@@ -140,7 +165,12 @@
+ 	 */ 
+ 	if (!NDevBlock(dev) && (flags & O_RDWR) == O_RDWR)
+ 		flags |= O_EXCL;
+-	*(int*)dev->d_private = open(dev->d_name, flags);
++#if defined(__APPLE__)
++	if (inherited)
++		*(int*)dev->d_private = fcntl(3, F_DUPFD_CLOEXEC, 4);
++	else
++#endif
++		*(int*)dev->d_private = open(dev->d_name, flags);
+ 	if (*(int*)dev->d_private == -1) {
+ 		err = errno;
+ 			/* if permission error and rw, retry read-only */

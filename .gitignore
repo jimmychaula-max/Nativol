@@ -1,0 +1,42 @@
+# Generated builds and local diagnostics
+.build/
+dist/
+.swiftpm/
+.local-engine/
+.local-fuse-inspect/
+local-reports/
+__pycache__/
+*.pyc
+.DS_Store
+*.xcuserstate
+*.xcuserdatad/
+
+# Local credentials and signing material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.mobileprovision
+credentials.json
+secrets.json
+
+# Runtime diagnostics and private disk/image fixtures
+*.dmg
+*.sparseimage
+*.sparsebundle/
+*.raw
+*.img
+*.log
+
+# Local publication reviews, onboarding drafts, and account screenshots
+FORK_REPORT.md
+SANITIZATION_REPORT.md
+docs/BUY-ME-A-COFFEE-PROFILE.md
+docs/buy-me-a-coffee-*.jpg
+docs/binance-pay-*.jpg
+docs/nativol-profile.png
+
+# Checked-in corresponding-source archives under third-party/sources are intentional.

@@ -1,0 +1,33 @@
+name: Source syntax checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Parse Python, shell scripts, and property lists
+        shell: bash
+        run: |
+          python3 - <<'PYTHON'
+          import ast
+          from pathlib import Path
+          import plistlib
+          import subprocess
+          for path in sorted(Path("scripts").glob("*.py")):
+              ast.parse(path.read_text(), filename=str(path))
+          for path in [Path("setup.sh"), *sorted(Path("scripts").glob("*.sh"))]:
+              subprocess.run(["bash", "-n", str(path)], check=True)
+          for path in Path("Resources").glob("*.plist"):
+              plistlib.loads(path.read_bytes())
+          print("Source syntax checks passed; no drive operation or binary build was run.")
+          PYTHON

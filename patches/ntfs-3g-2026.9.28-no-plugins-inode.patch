@@ -1,0 +1,11 @@
+--- a/src/ntfs-3g.c
++++ b/src/ntfs-3g.c
+@@ -2060,7 +2060,7 @@
+ {
+ 	char *name;
+ 	ntfschar *uname = NULL, *utarget = NULL;
+-	ntfs_inode *dir_ni = NULL, *ni;
++	ntfs_inode *dir_ni = NULL, *ni = NULL;
+ 	char *dir_path;
+ 	le32 securid;
+ 	char *path = NULL;
